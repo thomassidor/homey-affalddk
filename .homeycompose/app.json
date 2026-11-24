@@ -1,15 +1,22 @@
 {
-  "id": "dk.affald",
+  "id": "com.thomassidor.affalddk",
   "version": "1.0.0",
   "compatibility": ">=12.2.0",
   "sdk": 3,
-  "platforms": ["local"],
-  "name": { "en": "Affald DK", "da": "Affald DK" },
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Affald DK",
+    "da": "Affald DK"
+  },
   "description": {
     "en": "Know when your bins are emptied – waste pickup days for Danish municipalities",
     "da": "Hold styr på hvornår skraldet hentes – tømmedage for danske kommuner"
   },
-  "category": ["tools"],
+  "category": [
+    "tools"
+  ],
   "permissions": [],
   "brandColor": "#2E7D32",
   "images": {
@@ -17,17 +24,40 @@
     "large": "/assets/images/large.png",
     "xlarge": "/assets/images/xlarge.png"
   },
-  "author": { "name": "Thomas Sidor" },
+  "author": {
+    "name": "Thomas René Sidor",
+    "email": "mail@thomassidor.com"
+  },
   "contributors": {
     "developers": [
-      { "name": "Bjarne Riis (briis/affalddk, original Home Assistant integration)" },
-      { "name": "TermeHansen (pyaffalddk)" }
+      {
+        "name": "Bjarne Riis (briis/affalddk, the original Home Assistant integration)"
+      },
+      {
+        "name": "TermeHansen (pyaffalddk)"
+      }
     ]
   },
   "source": "https://github.com/thomassidor/homey-affalddk",
-  "support": "https://github.com/thomassidor/homey-affalddk/issues",
+  "bugs": {
+    "url": "https://github.com/thomassidor/homey-affalddk/issues"
+  },
   "tags": {
-    "en": ["waste", "garbage", "trash", "recycling", "pickup", "Denmark"],
-    "da": ["affald", "skrald", "tømning", "genbrug", "renovation", "kommune"]
+    "en": [
+      "waste",
+      "garbage",
+      "trash",
+      "recycling",
+      "pickup",
+      "Denmark"
+    ],
+    "da": [
+      "affald",
+      "skrald",
+      "tømning",
+      "genbrug",
+      "renovation",
+      "kommune"
+    ]
   }
 }

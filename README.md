@@ -10,8 +10,7 @@
   93 municipalities supported.
 </p>
 
-> [!IMPORTANT]
-> **Built on the work of [Affaldshåndtering DK](https://github.com/briis/affalddk)**, the Home Assistant integration by **Bjarne Riis** ([briis](https://github.com/briis)) and **TermeHansen** ([TermeHansen](https://github.com/TermeHansen)).
+> **Built on [Affaldshåndtering DK](https://github.com/briis/affalddk)**, the Home Assistant integration by **Bjarne Riis** ([briis](https://github.com/briis)) and **TermeHansen** ([TermeHansen](https://github.com/TermeHansen)).
 >
 > Every Danish municipality publishes its pickup calendar differently, through 18 different systems. Working out how to read each one, and keeping up when they change, is the hard part. That's their work. This app is a port of their `pyaffalddk` library to TypeScript, with the same provider logic, the same mapping of waste type names, and their icons, used under the MIT license. If this app is useful to you, consider [buying Bjarne a coffee](https://www.buymeacoffee.com/briis).
 
@@ -169,6 +168,6 @@ See [docs/development.md](docs/development.md) for the code layout and tests. It
 
 - **[Affaldshåndtering DK](https://github.com/briis/affalddk)** by Bjarne Riis and TermeHansen: the provider integrations, the waste type mapping and the waste type icons, which this app ports (MIT).
 - Address search uses [Klimadatastyrelsen's Adressevælger](https://adressevaelger.dk). The municipality suggestion uses [dawa.companydata.dk](https://dawa.companydata.dk).
-- Homey app by Thomas Sidor.
+- Homey app by Thomas René Sidor.
 
 Released under the [MIT license](LICENSE), with the original project's copyright notice kept.

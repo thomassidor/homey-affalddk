@@ -7,6 +7,6 @@ Add your address as a device and you get:
 - Flow conditions such as "Paper is collected tomorrow" or "Any waste type is collected within 2 days"
 - Two dashboard widgets: the upcoming pickups as a list, and a pickup calendar with the waste type icons on the pickup days
 
-Around 90 municipalities are supported through AffaldOnline, Perfect Waste, RenoWeb, Open Experience, Provas, RenoDjurs, RenoSyd, Vest Forbrænding, WasteWatch, Kredsløb (Aarhus), Odense Renovation, København, Herning, Ikast-Brande and Kolding.
+93 municipalities are supported through AffaldOnline, Perfect Waste, RenoWeb, Open Experience, Provas, RenoDjurs, RenoSyd, Vest Forbrænding, WasteWatch, Kredsløb (Aarhus), Odense Renovation, København, Herning, Ikast-Brande and Kolding.
 
 Based on the Home Assistant integration Affaldshåndtering DK by Bjarne Riis and TermeHansen (github.com/briis/affalddk), used under the MIT license.

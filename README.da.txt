@@ -7,6 +7,6 @@ Tilføj din adresse som en enhed, og du får:
 - Flow-betingelser som "Papir tømmes i morgen" eller "Enhver affaldstype tømmes inden for 2 dage"
 - To dashboard-widgets: de kommende tømninger som liste, og en tømmekalender med affaldstypernes ikoner på tømmedagene
 
-Omkring 90 kommuner understøttes via AffaldOnline, Perfect Waste, RenoWeb, Open Experience, Provas, RenoDjurs, RenoSyd, Vest Forbrænding, WasteWatch, Kredsløb (Aarhus), Odense Renovation, København, Herning, Ikast-Brande og Kolding.
+93 kommuner understøttes via AffaldOnline, Perfect Waste, RenoWeb, Open Experience, Provas, RenoDjurs, RenoSyd, Vest Forbrænding, WasteWatch, Kredsløb (Aarhus), Odense Renovation, København, Herning, Ikast-Brande og Kolding.
 
 Bygget på Home Assistant-integrationen Affaldshåndtering DK af Bjarne Riis og TermeHansen (github.com/briis/affalddk), brugt under MIT-licensen.

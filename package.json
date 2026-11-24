@@ -1,5 +1,5 @@
 {
-  "name": "dk.affald",
+  "name": "com.thomassidor.affalddk",
   "version": "1.0.0",
   "description": "Danish waste pickup schedules for Homey (port of briis/affalddk)",
   "main": "app.js",

@@ -1,6 +1,6 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
-  "id": "dk.affald",
+  "id": "com.thomassidor.affalddk",
   "version": "1.0.0",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -26,12 +26,13 @@
     "xlarge": "/assets/images/xlarge.png"
   },
   "author": {
-    "name": "Thomas Sidor"
+    "name": "Thomas René Sidor",
+    "email": "mail@thomassidor.com"
   },
   "contributors": {
     "developers": [
       {
-        "name": "Bjarne Riis (briis/affalddk, original Home Assistant integration)"
+        "name": "Bjarne Riis (briis/affalddk, the original Home Assistant integration)"
       },
       {
         "name": "TermeHansen (pyaffalddk)"
@@ -39,7 +40,9 @@
     ]
   },
   "source": "https://github.com/thomassidor/homey-affalddk",
-  "support": "https://github.com/thomassidor/homey-affalddk/issues",
+  "bugs": {
+    "url": "https://github.com/thomassidor/homey-affalddk/issues"
+  },
   "tags": {
     "en": [
       "waste",
