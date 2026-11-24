@@ -1,0 +1,358 @@
+[
+  {
+    "fraction": "660 l papir/pap",
+    "day": "Tirsdag",
+    "weeks": [
+      [
+        28,
+        2026
+      ],
+      [
+        31,
+        2026
+      ],
+      [
+        34,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "660 l papir/pap",
+    "day": "Fredag",
+    "weeks": [
+      [
+        29,
+        2026
+      ],
+      [
+        32,
+        2026
+      ],
+      [
+        35,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "5 m3 restaffald",
+    "day": "Torsdag",
+    "weeks": [
+      [
+        -1,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "5 m3 restaffald",
+    "day": "Torsdag",
+    "weeks": [
+      [
+        -2,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "240 l madaffald",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        -1,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "240 l madaffald",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        -2,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "240 l madaffald",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        -1,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "240 l madaffald",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        -2,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "240 l madaffald",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        -1,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "240 l madaffald",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        -2,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "240 l madaffald",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        -1,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "240 l madaffald",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        -2,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "240 l madaffald",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        -1,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "240 l madaffald",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        -2,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "660 l papir/pap",
+    "day": "Tirsdag",
+    "weeks": [
+      [
+        28,
+        2026
+      ],
+      [
+        31,
+        2026
+      ],
+      [
+        34,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "660 l papir/pap",
+    "day": "Fredag",
+    "weeks": [
+      [
+        29,
+        2026
+      ],
+      [
+        32,
+        2026
+      ],
+      [
+        35,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "5 m3 restaffald",
+    "day": "Torsdag",
+    "weeks": [
+      [
+        -1,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "5 m3 restaffald",
+    "day": "Torsdag",
+    "weeks": [
+      [
+        -2,
+        2026
+      ]
+    ]
+  },
+  {
+    "fraction": "5 m3 plast/metal",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        30,
+        2026
+      ],
+      [
+        46,
+        2026
+      ],
+      [
+        9,
+        2027
+      ]
+    ]
+  },
+  {
+    "fraction": "5 m3 plast/metal",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        32,
+        2026
+      ],
+      [
+        48,
+        2026
+      ],
+      [
+        11,
+        2027
+      ]
+    ]
+  },
+  {
+    "fraction": "5 m3 plast/metal",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        34,
+        2026
+      ],
+      [
+        50,
+        2026
+      ],
+      [
+        13,
+        2027
+      ]
+    ]
+  },
+  {
+    "fraction": "5 m3 plast/metal",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        36,
+        2026
+      ],
+      [
+        52,
+        2026
+      ],
+      [
+        15,
+        2027
+      ]
+    ]
+  },
+  {
+    "fraction": "5 m3 plast/metal",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        38,
+        2026
+      ],
+      [
+        1,
+        2027
+      ],
+      [
+        17,
+        2027
+      ]
+    ]
+  },
+  {
+    "fraction": "5 m3 plast/metal",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        40,
+        2026
+      ],
+      [
+        3,
+        2027
+      ],
+      [
+        19,
+        2027
+      ]
+    ]
+  },
+  {
+    "fraction": "5 m3 plast/metal",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        42,
+        2026
+      ],
+      [
+        5,
+        2027
+      ],
+      [
+        21,
+        2027
+      ]
+    ]
+  },
+  {
+    "fraction": "5 m3 plast/metal",
+    "day": "Onsdag",
+    "weeks": [
+      [
+        28,
+        2026
+      ],
+      [
+        44,
+        2026
+      ],
+      [
+        7,
+        2027
+      ]
+    ]
+  }
+]

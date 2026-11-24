@@ -1,0 +1,408 @@
+{
+  "ids": {
+    "københavn": 101,
+    "frederiksberg": 147,
+    "ballerup": 151,
+    "brøndby": 153,
+    "dragør": 155,
+    "gentofte": 157,
+    "gladsaxe": 159,
+    "glostrup": 161,
+    "herlev": 163,
+    "albertslund": 165,
+    "hvidovre": 167,
+    "høje-taastrup": 169,
+    "lyngby-taarbæk": 173,
+    "rødovre": 175,
+    "ishøj": 183,
+    "tårnby": 185,
+    "vallensbæk": 187,
+    "furesø": 190,
+    "allerød": 201,
+    "fredensborg": 210,
+    "helsingør": 217,
+    "hillerød": 219,
+    "hørsholm": 223,
+    "rudersdal": 230,
+    "egedal": 240,
+    "frederikssund": 250,
+    "greve": 253,
+    "køge": 259,
+    "halsnæs": 260,
+    "roskilde": 265,
+    "solrød": 269,
+    "gribskov": 270,
+    "odsherred": 306,
+    "holbæk": 316,
+    "faxe": 320,
+    "kalundborg": 326,
+    "ringsted": 329,
+    "slagelse": 330,
+    "stevns": 336,
+    "sorø": 340,
+    "lejre": 350,
+    "lolland": 360,
+    "næstved": 370,
+    "guldborgsund": 376,
+    "vordingborg": 390,
+    "bornholm": 400,
+    "middelfart": 410,
+    "christiansø": 411,
+    "assens": 420,
+    "faaborg-midtfyn": 430,
+    "kerteminde": 440,
+    "nyborg": 450,
+    "odense": 461,
+    "svendborg": 479,
+    "nordfyns": 480,
+    "langeland": 482,
+    "ærø": 492,
+    "haderslev": 510,
+    "billund": 530,
+    "sønderborg": 540,
+    "tønder": 550,
+    "esbjerg": 561,
+    "fanø": 563,
+    "varde": 573,
+    "vejen": 575,
+    "aabenraa": 580,
+    "fredericia": 607,
+    "horsens": 615,
+    "kolding": 621,
+    "vejle": 630,
+    "herning": 657,
+    "holstebro": 661,
+    "lemvig": 665,
+    "struer": 671,
+    "syddjurs": 706,
+    "norddjurs": 707,
+    "favrskov": 710,
+    "odder": 727,
+    "randers": 730,
+    "silkeborg": 740,
+    "samsø": 741,
+    "skanderborg": 746,
+    "aarhus": 751,
+    "ikast-brande": 756,
+    "ringkøbing-skjern": 760,
+    "hedensted": 766,
+    "morsø": 773,
+    "skive": 779,
+    "thisted": 787,
+    "viborg": 791,
+    "brønderslev": 810,
+    "frederikshavn": 813,
+    "vesthimmerlands": 820,
+    "læsø": 825,
+    "rebild": 840,
+    "mariagerfjord": 846,
+    "jammerbugt": 849,
+    "aalborg": 851,
+    "hjørring": 860
+  },
+  "list": {
+    "Aabenraa": [
+      "renoweb"
+    ],
+    "Aalborg": [
+      "renoweb"
+    ],
+    "Aarhus": [
+      "aarhus"
+    ],
+    "Albertslund": [
+      "vestfor"
+    ],
+    "Allerød": [
+      "perfectwaste"
+    ],
+    "Assens": [
+      "affaldonline",
+      "YWZkOTEyYTItNDRiMy00MDJmLTllMTMtNWFlYjcwMWNlMTQz"
+    ],
+    "Ballerup": [
+      "perfectwaste"
+    ],
+    "Billund": [
+      "renoweb"
+    ],
+    "Bornholm": [
+      "renoweb"
+    ],
+    "Brøndby": [
+      "renoweb"
+    ],
+    "Brønderslev": [
+      "renoweb"
+    ],
+    "Dragør": [
+      "renoweb"
+    ],
+    "Egedal": [
+      "renoweb"
+    ],
+    "Esbjerg": [
+      "renoweb"
+    ],
+    "Fanø": [
+      "affaldonlinepdf",
+      "fanoe"
+    ],
+    "Favrskov": [
+      "affaldonline",
+      "ZGZmY2M1YjYtYjllZS00NzhkLTgyZTItMDMwMTIzNDg1Zjdl"
+    ],
+    "Faxe": [
+      "perfectwaste"
+    ],
+    "Fredensborg": [
+      "renoweb"
+    ],
+    "Fredericia": [
+      "openexplive",
+      "3YWh0MjlpbDh1djNiM25hZA=="
+    ],
+    "Frederikssund": [
+      "perfectwaste"
+    ],
+    "Frederiksberg": [
+      "perfectwaste"
+    ],
+    "Furesø": [
+      "vestfor"
+    ],
+    "Faaborg-Midtfyn": [
+      "affaldonline",
+      "Y2VjYTU5NzgtNjM4MC00ZmY4LWFjMjgtOWI2NTA1NDU3ZGE4"
+    ],
+    "Gentofte": [
+      "renoweb"
+    ],
+    "Gladsaxe": [
+      "perfectwaste"
+    ],
+    "Glostrup": [
+      "renoweb"
+    ],
+    "Greve": [
+      "perfectwaste"
+    ],
+    "Gribskov": [
+      "perfectwaste"
+    ],
+    "Guldborgsund": [
+      "perfectwaste"
+    ],
+    "Haderslev": [
+      "provas"
+    ],
+    "Halsnæs": [
+      "perfectwaste"
+    ],
+    "Helsingør": [
+      "perfectwaste"
+    ],
+    "Herlev": [
+      "vestfor"
+    ],
+    "Herning": [
+      "herning"
+    ],
+    "Hillerød": [
+      "perfectwaste"
+    ],
+    "Hjørring": [
+      "renoweb"
+    ],
+    "Holbæk": [
+      "affaldonline",
+      "MDE3ZWZkMDYtYWM0Mi00YjM2LThhNzAtYWIzMDkxNjJlOTg4"
+    ],
+    "Holstebro": [
+      "openexp",
+      "renomatic.nomi4s.dk/app/appservice/"
+    ],
+    "Horsens": [
+      "perfectwaste"
+    ],
+    "Hvidovre": [
+      "perfectwaste"
+    ],
+    "Høje-Taastrup": [
+      "perfectwaste"
+    ],
+    "Hørsholm": [
+      "perfectwaste"
+    ],
+    "Ikast-Brande": [
+      "ikastbrande"
+    ],
+    "Ishøj": [
+      "vestfor"
+    ],
+    "Jammerbugt": [
+      "renoweb"
+    ],
+    "Kalundborg": [
+      "perfectwaste"
+    ],
+    "Kerteminde": [
+      "renoweb"
+    ],
+    "Kolding": [
+      "kolding"
+    ],
+    "København": [
+      "affaldkk"
+    ],
+    "Køge": [
+      "perfectwaste"
+    ],
+    "Langeland": [
+      "affaldonline",
+      "YmU4YTk0MjAtYTlhZS00MmU2LTgzZjItZWRhNWVjM2ZhMjlm"
+    ],
+    "Lejre": [
+      "perfectwaste"
+    ],
+    "Lemvig": [
+      "openexp",
+      "renomatic.nomi4s.dk/app/appservice/"
+    ],
+    "Lolland": [
+      "perfectwaste"
+    ],
+    "Lyngby-Taarbæk": [
+      "perfectwaste"
+    ],
+    "Mariagerfjord": [
+      "renoweb"
+    ],
+    "Middelfart": [
+      "affaldonlinepdf",
+      "middelfart"
+    ],
+    "Morsø": [
+      "affaldonline",
+      "MDE5OWI3ZDItYmJhZS00NmE1LWE3MjYtMjkzYzkyMzZmNGU1"
+    ],
+    "Norddjurs": [
+      "renodjurs"
+    ],
+    "Næstved": [
+      "perfectwaste"
+    ],
+    "Nordfyns": [
+      "openexp",
+      "reno.nordfynskommune.dk/app/AppService/AppService/"
+    ],
+    "Nyborg": [
+      "affaldonlinepdf",
+      "nyborg"
+    ],
+    "Odense": [
+      "odense"
+    ],
+    "Odder": [
+      "renosyd",
+      727
+    ],
+    "Odsherred": [
+      "perfectwaste"
+    ],
+    "Randers": [
+      "renoweb"
+    ],
+    "Rebild": [
+      "affaldonline",
+      "Y2IzZGRjOGMtOTAwYS00M2NlLWFjODgtZWM3NTg3ZGI0ZGIz"
+    ],
+    "Ringkøbing-Skjern": [
+      "perfectwaste"
+    ],
+    "Roskilde": [
+      "perfectwaste"
+    ],
+    "Rudersdal": [
+      "perfectwaste"
+    ],
+    "Rødovre": [
+      "renoweb"
+    ],
+    "Samsø": [
+      "renoweb"
+    ],
+    "Silkeborg": [
+      "affaldonlineweb",
+      "silkeborg"
+    ],
+    "Skanderborg": [
+      "renosyd",
+      746
+    ],
+    "Skive": [
+      "openexp",
+      "renomatic.nomi4s.dk/app/appservice/"
+    ],
+    "Slagelse": [
+      "perfectwaste"
+    ],
+    "Solrød": [
+      "perfectwaste"
+    ],
+    "Sorø": [
+      "affaldonlinepdf",
+      "soroe"
+    ],
+    "Stevns": [
+      "perfectwaste"
+    ],
+    "Struer": [
+      "openexp",
+      "renomatic.nomi4s.dk/app/appservice/"
+    ],
+    "Svendborg": [
+      "renoweb"
+    ],
+    "Syddjurs": [
+      "renodjurs"
+    ],
+    "Sønderborg": [
+      "renoweb"
+    ],
+    "Thisted": [
+      "openexplive",
+      "5NmkzUGpvZlRaMzdqZzBEQw=="
+    ],
+    "Tønder": [
+      "wastewatch"
+    ],
+    "Tårnby": [
+      "perfectwaste"
+    ],
+    "Vallensbæk": [
+      "vestfor"
+    ],
+    "Varde": [
+      "renoweb"
+    ],
+    "Vejen": [
+      "perfectwaste"
+    ],
+    "Vejle": [
+      "affaldonline",
+      "MjA5Y2I2NjktZTJlOC00YzliLTgwNDgtODI4N2RiNTFhNjFl"
+    ],
+    "Viborg": [
+      "affaldonline",
+      "NEVCQjkwMEMtMDg4RS00NzVGLTgzRUQtQjA4N0Y0QUQwN0JB"
+    ],
+    "Vordingborg": [
+      "renoweb"
+    ],
+    "Ærø": [
+      "affaldonline",
+      "ZGI3NjVhMmYtM2Y1MC00YWJkLWE3MzgtMzgyNTgxM2ZlZGNi"
+    ]
+  }
+}

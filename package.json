@@ -1,0 +1,27 @@
+{
+  "name": "dk.affald",
+  "version": "1.0.0",
+  "description": "Danish waste pickup schedules for Homey (port of briis/affalddk)",
+  "main": "app.js",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "probe": "tsx scripts/probe.ts"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/homey": "npm:homey-apps-sdk-v3-types@^1.8.4",
+    "@types/node": "^22.20.5",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.8"
+  }
+}

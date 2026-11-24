@@ -1,0 +1,33 @@
+{
+  "id": "dk.affald",
+  "version": "1.0.0",
+  "compatibility": ">=12.2.0",
+  "sdk": 3,
+  "platforms": ["local"],
+  "name": { "en": "Affald DK", "da": "Affald DK" },
+  "description": {
+    "en": "Know when your bins are emptied – waste pickup days for Danish municipalities",
+    "da": "Hold styr på hvornår skraldet hentes – tømmedage for danske kommuner"
+  },
+  "category": ["tools"],
+  "permissions": [],
+  "brandColor": "#2E7D32",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": { "name": "Thomas Sidor" },
+  "contributors": {
+    "developers": [
+      { "name": "Bjarne Riis (briis/affalddk, original Home Assistant integration)" },
+      { "name": "TermeHansen (pyaffalddk)" }
+    ]
+  },
+  "source": "https://github.com/briis/affalddk",
+  "support": "https://github.com/briis/affalddk/issues",
+  "tags": {
+    "en": ["waste", "garbage", "trash", "recycling", "pickup", "Denmark"],
+    "da": ["affald", "skrald", "tømning", "genbrug", "renovation", "kommune"]
+  }
+}

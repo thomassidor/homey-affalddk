@@ -1,0 +1,608 @@
+{
+ "openexplive": {
+  "municipality": "Fredericia",
+  "fixture": "openexplive.data",
+  "loader": "json",
+  "today": "2025-05-25",
+  "address_id": "14578",
+  "pickups": {
+   "restaffald": {
+    "date": "2025-05-27",
+    "group": [
+     "restaffald"
+    ],
+    "description": "Restaffald",
+    "container_count": null
+   },
+   "haveaffald": {
+    "date": "2025-05-29",
+    "group": [
+     "haveaffald"
+    ],
+    "description": "Haveaffald",
+    "container_count": null
+   },
+   "storskrald": {
+    "date": "2025-05-29",
+    "group": [
+     "storskrald"
+    ],
+    "description": "Stort Elektronik",
+    "container_count": null
+   },
+   "madaffald": {
+    "date": "2025-05-27",
+    "group": [
+     "madaffald"
+    ],
+    "description": "Madaffald",
+    "container_count": null
+   },
+   "pap": {
+    "date": "2025-06-02",
+    "group": [
+     "pap"
+    ],
+    "description": "Pap",
+    "container_count": null
+   },
+   "papirmetal": {
+    "date": "2025-07-07",
+    "group": [
+     "papirmetal"
+    ],
+    "description": "Metal/papir",
+    "container_count": null
+   },
+   "plastmadkarton": {
+    "date": "2025-05-29",
+    "group": [
+     "plastmadkarton"
+    ],
+    "description": "Plast/ Mad- og drikkekartoner",
+    "container_count": null
+   },
+   "tekstil": {
+    "date": "2025-06-02",
+    "group": [
+     "tekstil"
+    ],
+    "description": "Tekstilaffald",
+    "container_count": null
+   },
+   "next_pickup": {
+    "date": "2025-05-27",
+    "group": [
+     "madaffald",
+     "restaffald"
+    ],
+    "description": "Madaffald | Restaffald",
+    "container_count": null
+   }
+  }
+ },
+ "openexp": {
+  "municipality": "Holstebro",
+  "fixture": "openexp.data",
+  "loader": "json",
+  "today": "2025-05-20",
+  "address_id": "14738",
+  "pickups": {
+   "plastmdkglasmetal": {
+    "date": "2025-06-04",
+    "group": [
+     "plastmdkglasmetal"
+    ],
+    "description": "Metal/Glas/Plast/MDK",
+    "container_count": null
+   },
+   "pappapir": {
+    "date": "2025-06-05",
+    "group": [
+     "pappapir"
+    ],
+    "description": "Papir/Pap",
+    "container_count": null
+   },
+   "restaffaldmadaffald": {
+    "date": "2025-05-22",
+    "group": [
+     "restaffaldmadaffald"
+    ],
+    "description": "Rest/Madaffald",
+    "container_count": null
+   },
+   "next_pickup": {
+    "date": "2025-05-22",
+    "group": [
+     "restaffaldmadaffald"
+    ],
+    "description": "Rest/Madaffald",
+    "container_count": null
+   }
+  }
+ },
+ "affaldonline": {
+  "municipality": "Vejle",
+  "fixture": "affaldonline.data",
+  "loader": "json",
+  "today": "2025-05-20",
+  "address_id": "1111",
+  "pickups": {
+   "dagrenovation": {
+    "date": "2025-05-28",
+    "group": [
+     "dagrenovation"
+    ],
+    "description": "240 L Dagrenovation 2-delt",
+    "container_count": null
+   },
+   "genbrug": {
+    "date": "2025-06-02",
+    "group": [
+     "genbrug"
+    ],
+    "description": "240 L Genanvendeligt 2-delt",
+    "container_count": null
+   },
+   "haveaffald": {
+    "date": "2025-06-04",
+    "group": [
+     "haveaffald"
+    ],
+    "description": "240 L Haveaffald",
+    "container_count": null
+   },
+   "next_pickup": {
+    "date": "2025-05-28",
+    "group": [
+     "dagrenovation"
+    ],
+    "description": "240 L Dagrenovation 2-delt",
+    "container_count": null
+   }
+  }
+ },
+ "perfectwaste": {
+  "municipality": "Køge",
+  "fixture": "Koege.data",
+  "loader": "json:result",
+  "today": "2025-05-04",
+  "address_id": "1111",
+  "pickups": {
+   "restaffald": {
+    "date": "2025-05-05",
+    "group": [
+     "restaffald"
+    ],
+    "description": "Rest",
+    "container_count": 7
+   },
+   "jern": {
+    "date": "2025-05-06",
+    "group": [
+     "jern"
+    ],
+    "description": "Metal",
+    "container_count": 2
+   },
+   "glas": {
+    "date": "2025-05-06",
+    "group": [
+     "glas"
+    ],
+    "description": "Glas",
+    "container_count": 1
+   },
+   "papir": {
+    "date": "2025-05-07",
+    "group": [
+     "papir"
+    ],
+    "description": "Papir",
+    "container_count": 2
+   },
+   "plast": {
+    "date": "2025-05-07",
+    "group": [
+     "plast"
+    ],
+    "description": "Plast",
+    "container_count": 2
+   },
+   "madaffald": {
+    "date": "2025-05-12",
+    "group": [
+     "madaffald"
+    ],
+    "description": "Mad",
+    "container_count": 2
+   },
+   "next_pickup": {
+    "date": "2025-05-05",
+    "group": [
+     "restaffald"
+    ],
+    "description": "Rest",
+    "container_count": null
+   }
+  }
+ },
+ "renoweb": {
+  "municipality": "Aalborg",
+  "fixture": "Aalborg_gh.data",
+  "loader": "json",
+  "today": "2025-05-04",
+  "address_id": "1111",
+  "pickups": {
+   "plastmadkarton": {
+    "date": "2025-05-22",
+    "group": [
+     "plastmadkarton"
+    ],
+    "description": "Genbrug henteordning",
+    "container_count": null
+   },
+   "restaffaldmadaffald": {
+    "date": "2025-05-09",
+    "group": [
+     "restaffaldmadaffald"
+    ],
+    "description": "240 liter mad- og restaffald - 2 rum",
+    "container_count": null
+   },
+   "pappapirglasmetal": {
+    "date": "2025-05-23",
+    "group": [
+     "pappapirglasmetal"
+    ],
+    "description": "240 liter glas/metal og pap/papir - 2 rum",
+    "container_count": null
+   },
+   "haveaffald": {
+    "date": "2025-05-22",
+    "group": [
+     "haveaffald"
+    ],
+    "description": "Haveaffald henteordning",
+    "container_count": null
+   },
+   "farligtaffaldmiljoboks": {
+    "date": "2025-05-22",
+    "group": [
+     "farligtaffaldmiljoboks"
+    ],
+    "description": "Rød kasse henteordning",
+    "container_count": null
+   },
+   "plast": {
+    "date": "2025-05-22",
+    "group": [
+     "plast"
+    ],
+    "description": "Plastaffald henteordning",
+    "container_count": null
+   },
+   "next_pickup": {
+    "date": "2025-05-09",
+    "group": [
+     "restaffaldmadaffald"
+    ],
+    "description": "240 liter mad- og restaffald - 2 rum",
+    "container_count": null
+   }
+  }
+ },
+ "odense": {
+  "municipality": "Odense",
+  "fixture": "odense_ics.data",
+  "loader": "text",
+  "today": "2025-04-25",
+  "address_id": "1111",
+  "pickups": {
+   "restaffald": {
+    "date": "2025-04-25",
+    "group": [
+     "restaffald"
+    ],
+    "description": "Restaffald",
+    "container_count": null
+   },
+   "pappi": {
+    "date": "2025-04-25",
+    "group": [
+     "pappi"
+    ],
+    "description": "Papir & småt pap",
+    "container_count": null
+   },
+   "madaffald": {
+    "date": "2025-04-28",
+    "group": [
+     "madaffald"
+    ],
+    "description": "Madaffald",
+    "container_count": null
+   },
+   "plastmadkarton": {
+    "date": "2025-05-05",
+    "group": [
+     "plastmadkarton"
+    ],
+    "description": "Plast og mad- & drikkekartoner",
+    "container_count": null
+   },
+   "metalglas": {
+    "date": "2025-05-12",
+    "group": [
+     "metalglas"
+    ],
+    "description": "Glas & Metal",
+    "container_count": null
+   },
+   "next_pickup": {
+    "date": "2025-04-25",
+    "group": [
+     "pappi",
+     "restaffald"
+    ],
+    "description": "Papir & småt pap | Restaffald",
+    "container_count": null
+   }
+  }
+ },
+ "aarhus": {
+  "municipality": "Aarhus",
+  "fixture": "Aarhus.data",
+  "loader": "json:0:plannedLoads",
+  "today": "2025-04-25",
+  "address_id": "1111",
+  "pickups": {
+   "restaffald": {
+    "date": "2025-04-28",
+    "group": [
+     "restaffald"
+    ],
+    "description": "Restaffald",
+    "container_count": null
+   },
+   "madaffald": {
+    "date": "2025-04-28",
+    "group": [
+     "madaffald"
+    ],
+    "description": "Madaffald",
+    "container_count": null
+   },
+   "pap": {
+    "date": "2025-04-29",
+    "group": [
+     "pap"
+    ],
+    "description": "Pap",
+    "container_count": null
+   },
+   "plastmadkarton": {
+    "date": "2025-04-30",
+    "group": [
+     "plastmadkarton"
+    ],
+    "description": "Mad- og drikkekartoner",
+    "container_count": null
+   },
+   "plast": {
+    "date": "2025-04-30",
+    "group": [
+     "plast"
+    ],
+    "description": "Plast",
+    "container_count": null
+   },
+   "glas": {
+    "date": "2025-05-07",
+    "group": [
+     "glas"
+    ],
+    "description": "Glas",
+    "container_count": null
+   },
+   "jern": {
+    "date": "2025-05-07",
+    "group": [
+     "jern"
+    ],
+    "description": "Metal",
+    "container_count": null
+   },
+   "papir": {
+    "date": "2025-05-07",
+    "group": [
+     "papir"
+    ],
+    "description": "Papir",
+    "container_count": null
+   },
+   "tekstil": {
+    "date": "2025-05-07",
+    "group": [
+     "tekstil"
+    ],
+    "description": "Tekstiler",
+    "container_count": null
+   },
+   "next_pickup": {
+    "date": "2025-04-28",
+    "group": [
+     "madaffald",
+     "restaffald"
+    ],
+    "description": "Madaffald | Restaffald",
+    "container_count": null
+   }
+  }
+ },
+ "provas": {
+  "municipality": "Haderslev",
+  "fixture": "provas.data",
+  "loader": "json",
+  "today": "2025-06-04",
+  "address_id": "1111",
+  "pickups": {
+   "restaffaldmadaffald": {
+    "date": "2025-06-10",
+    "group": [
+     "restaffaldmadaffald"
+    ],
+    "description": "Mad/Rest",
+    "container_count": null
+   },
+   "plastmadkarton": {
+    "date": "2025-06-11",
+    "group": [
+     "plastmadkarton"
+    ],
+    "description": "Plast/Mad-og drikkekarton",
+    "container_count": null
+   },
+   "pappapirglasmetal": {
+    "date": "2025-06-30",
+    "group": [
+     "pappapirglasmetal"
+    ],
+    "description": "Pap/papir + Metal/glas",
+    "container_count": null
+   },
+   "next_pickup": {
+    "date": "2025-06-10",
+    "group": [
+     "restaffaldmadaffald"
+    ],
+    "description": "Mad/Rest",
+    "container_count": null
+   }
+  }
+ },
+ "renodjurs": {
+  "municipality": "Norddjurs",
+  "fixture": "renodjurs.data",
+  "loader": "json",
+  "today": "2025-06-04",
+  "address_id": "1111",
+  "pickups": {
+   "restaffaldmadaffald": {
+    "date": "2025-06-10",
+    "group": [
+     "restaffaldmadaffald"
+    ],
+    "description": "240 l restaffald/madaffald, 14-dages tømning",
+    "container_count": null
+   },
+   "plastmdkglasmetal": {
+    "date": "2025-06-19",
+    "group": [
+     "plastmdkglasmetal"
+    ],
+    "description": "240 l plast/mad- og drikkekartoner/glas/metal, tømning hver 3. uge",
+    "container_count": null
+   },
+   "papir": {
+    "date": "2025-06-09",
+    "group": [
+     "papir"
+    ],
+    "description": "240 l papirbeholder",
+    "container_count": null
+   },
+   "next_pickup": {
+    "date": "2025-06-09",
+    "group": [
+     "papir"
+    ],
+    "description": "240 l papirbeholder",
+    "container_count": null
+   }
+  }
+ },
+ "herning": {
+  "municipality": "Herning",
+  "fixture": "herning.data",
+  "loader": "json",
+  "today": "2025-06-17",
+  "address_id": "1111",
+  "pickups": {
+   "pappapir": {
+    "date": "2026-07-07",
+    "group": [
+     "pappapir"
+    ],
+    "description": "660 l papir/pap",
+    "container_count": null
+   },
+   "restaffald": {
+    "date": "2025-06-19",
+    "group": [
+     "restaffald"
+    ],
+    "description": "5 m3 restaffald",
+    "container_count": null
+   },
+   "madaffald": {
+    "date": "2025-06-18",
+    "group": [
+     "madaffald"
+    ],
+    "description": "240 l madaffald",
+    "container_count": null
+   },
+   "plastmetal": {
+    "date": "2026-07-08",
+    "group": [
+     "plastmetal"
+    ],
+    "description": "5 m3 plast/metal",
+    "container_count": null
+   },
+   "next_pickup": {
+    "date": "2025-06-18",
+    "group": [
+     "madaffald"
+    ],
+    "description": "240 l madaffald",
+    "container_count": null
+   }
+  }
+ },
+ "wastewatch": {
+  "municipality": "Tønder",
+  "fixture": "tonfor.data",
+  "loader": "json",
+  "today": "2026-01-06",
+  "address_id": "1111",
+  "pickups": {
+   "genbrug": {
+    "date": "2026-01-06",
+    "group": [
+     "genbrug"
+    ],
+    "description": "Genbrug",
+    "container_count": null
+   },
+   "restaffaldmadaffald": {
+    "date": "2026-01-08",
+    "group": [
+     "restaffaldmadaffald"
+    ],
+    "description": "Husholdningsaffald",
+    "container_count": null
+   },
+   "next_pickup": {
+    "date": "2026-01-06",
+    "group": [
+     "genbrug"
+    ],
+    "description": "Genbrug",
+    "container_count": null
+   }
+  }
+ }
+}
