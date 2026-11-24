@@ -22,6 +22,7 @@ Data is fetched once a day, between 03:00 and 06:00. The day counts are recomput
 ```bash
 npm install
 npm test                 # vitest: fraction mapping, providers vs. upstream, PDF/ICS/dates
+npm run test:live        # live: one real address per municipality (all 93), ~1 min, needs internet
 npm run typecheck
 npx tsx scripts/probe.ts Roskilde --zip 4040 --street Bygaden --number 3   # live probe of one address
 npx tsx scripts/smoke.ts                                                    # live check of all providers
@@ -58,8 +59,24 @@ npm test
 
 Provider changes, such as new endpoints, need to be ported by hand from `pyaffalddk/interface.py`.
 
+### Live tests
+
+`test/fixtures/live-addresses.json` holds one verified address for each supported municipality. `test/live/municipalities.live.test.ts` runs each of them through address search, address lookup and pickups against the real provider APIs.
+
+`scripts/find-addresses.ts` finds these addresses. It takes random single-family addresses from DAWA (`dawa.companydata.dk`) and keeps the first one that gives pickups.
+
+If an address stops working, for example after the owner cancels service, pick a new one:
+
+```bash
+npx tsx scripts/find-addresses.ts Roskilde                          # new random address
+npx tsx scripts/find-addresses.ts "Frederiksberg=2000/Smallegade/3"  # a specific address
+npx tsx scripts/find-addresses.ts                                   # fill in any missing municipality
+```
+
+When the live tests find waste-type names that upstream's mapping doesn't know, they print them at the end. Those pickups are skipped, as upstream does. Report new names to briis/affalddk, or add them to `supported_items.json` there.
+
 ### Known provider status (2026-11)
 
-- **Working:** all providers apart from the two below. `scripts/smoke.ts` runs one known address per provider.
-- **Vest Forbrænding** (Albertslund, Furesø, Herlev, Ishøj, Vallensbæk): `ToemmeDates` answers HTTP 500, and upstream fails the same way.
+- **All 93 municipalities pass the live tests** (2026-11-24).
+- **Vest Forbrænding and Odense** answer HTTP 500 for some addresses, while other addresses work. Upstream behaves the same way.
 - **NemAffald** (old København API): no municipality uses it any more, so it isn't ported.

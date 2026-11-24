@@ -1,0 +1,1581 @@
+{
+  "Albertslund": {
+    "municipality": "Albertslund",
+    "apiType": "vestfor",
+    "zipcode": "2620",
+    "street": "Bispehusene",
+    "houseNumber": "21",
+    "providerAddress": "Bispehusene 21",
+    "verified": "2026-11-24",
+    "eventCount": 34,
+    "keys": [
+      "metalglas",
+      "pap",
+      "pappi",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Allerød": {
+    "municipality": "Allerød",
+    "apiType": "perfectwaste",
+    "zipcode": "3450",
+    "street": "Gl Lyngevej",
+    "houseNumber": "113",
+    "providerAddress": "Gl Lyngevej 113",
+    "verified": "2026-11-24",
+    "eventCount": 15,
+    "keys": [
+      "farligtaffald",
+      "metalglas",
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Assens": {
+    "municipality": "Assens",
+    "apiType": "affaldonline",
+    "zipcode": "5560",
+    "street": "Blommehaven",
+    "houseNumber": "32",
+    "providerAddress": "Blommehaven 32",
+    "verified": "2026-11-24",
+    "eventCount": 58,
+    "keys": [
+      "pappapirglasmetal",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Ballerup": {
+    "municipality": "Ballerup",
+    "apiType": "perfectwaste",
+    "zipcode": "2750",
+    "street": "Axel Juels Alle",
+    "houseNumber": "51",
+    "providerAddress": "Axel Juels Alle 51",
+    "verified": "2026-11-24",
+    "eventCount": 49,
+    "keys": [
+      "farligtaffald",
+      "haveaffald",
+      "juletrae",
+      "metalglas",
+      "pap",
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Billund": {
+    "municipality": "Billund",
+    "apiType": "renoweb",
+    "zipcode": "7200",
+    "street": "Dalsøvej",
+    "houseNumber": "145",
+    "providerAddress": "Dalsøvej 145",
+    "verified": "2026-11-24",
+    "eventCount": 4,
+    "keys": [
+      "madaffald",
+      "pappapir",
+      "plastmdkglasmetal",
+      "restaffald"
+    ],
+    "missingTypes": []
+  },
+  "Bornholm": {
+    "municipality": "Bornholm",
+    "apiType": "renoweb",
+    "zipcode": "3782",
+    "street": "Bedegadevej",
+    "houseNumber": "25",
+    "providerAddress": "Bedegadevej 25",
+    "verified": "2026-11-24",
+    "eventCount": 2,
+    "keys": [
+      "pappapirglasmetal",
+      "restplast"
+    ],
+    "missingTypes": []
+  },
+  "Brøndby": {
+    "municipality": "Brøndby",
+    "apiType": "renoweb",
+    "zipcode": "2660",
+    "street": "Agerlunden",
+    "houseNumber": "22",
+    "providerAddress": "Agerlunden 22",
+    "verified": "2026-11-24",
+    "eventCount": 4,
+    "keys": [
+      "metalglas",
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Brønderslev": {
+    "municipality": "Brønderslev",
+    "apiType": "renoweb",
+    "zipcode": "9320",
+    "street": "Borgergade",
+    "houseNumber": "7",
+    "providerAddress": "Borgergade 7",
+    "verified": "2026-11-24",
+    "eventCount": 2,
+    "keys": [
+      "papirglasmetalplast",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Dragør": {
+    "municipality": "Dragør",
+    "apiType": "renoweb",
+    "zipcode": "2791",
+    "street": "Engvej",
+    "houseNumber": "27",
+    "providerAddress": "Engvej 27",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "haveaffald",
+      "pappapir",
+      "plastmetalmdk",
+      "restaffaldmadaffald",
+      "storskrald",
+      "tekstil"
+    ],
+    "missingTypes": []
+  },
+  "Egedal": {
+    "municipality": "Egedal",
+    "apiType": "renoweb",
+    "zipcode": "2765",
+    "street": "Astershaven",
+    "houseNumber": "51",
+    "providerAddress": "Astershaven 51",
+    "verified": "2026-11-24",
+    "eventCount": 3,
+    "keys": [
+      "haveaffald",
+      "juletrae",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Esbjerg": {
+    "municipality": "Esbjerg",
+    "apiType": "renoweb",
+    "zipcode": "6700",
+    "street": "Baldursgade",
+    "houseNumber": "40",
+    "providerAddress": "Baldursgade 40",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "farligtaffaldmiljoboks",
+      "haveaffald",
+      "juletrae",
+      "pappapir",
+      "plastmdkglasmetal",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Fanø": {
+    "municipality": "Fanø",
+    "apiType": "affaldonlinepdf",
+    "zipcode": "6720",
+    "street": "Klittoften",
+    "houseNumber": "7",
+    "providerAddress": "Klittoften 7",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "madaffald",
+      "restaffald"
+    ],
+    "missingTypes": []
+  },
+  "Favrskov": {
+    "municipality": "Favrskov",
+    "apiType": "affaldonline",
+    "zipcode": "8370",
+    "street": "Elgårdsminde",
+    "houseNumber": "42",
+    "providerAddress": "Elgårdsminde 42",
+    "verified": "2026-11-24",
+    "eventCount": 7,
+    "keys": [
+      "pappapirtekstil",
+      "plastmdkglasmetal",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Faxe": {
+    "municipality": "Faxe",
+    "apiType": "perfectwaste",
+    "zipcode": "4690",
+    "street": "Elmeparken",
+    "houseNumber": "31",
+    "providerAddress": "Elmeparken 31",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "farligtaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Fredensborg": {
+    "municipality": "Fredensborg",
+    "apiType": "renoweb",
+    "zipcode": "2980",
+    "street": "Avderødvej",
+    "houseNumber": "15",
+    "providerAddress": "Avderødvej 15 -17",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "jern",
+      "pap",
+      "papir",
+      "plastmadkarton",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Fredericia": {
+    "municipality": "Fredericia",
+    "apiType": "openexplive",
+    "zipcode": "7000",
+    "street": "Blichersvej",
+    "houseNumber": "11",
+    "providerAddress": "Blichersvej 11",
+    "verified": "2026-11-24",
+    "eventCount": 4,
+    "keys": [
+      "genbrug",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Frederiksberg": {
+    "municipality": "Frederiksberg",
+    "apiType": "perfectwaste",
+    "zipcode": "2000",
+    "street": "Smallegade",
+    "houseNumber": "3",
+    "providerAddress": "Smallegade 3",
+    "verified": "2026-11-24",
+    "eventCount": 81,
+    "keys": [
+      "jern",
+      "madaffald",
+      "plastmadkarton",
+      "restaffald"
+    ],
+    "missingTypes": []
+  },
+  "Frederikssund": {
+    "municipality": "Frederikssund",
+    "apiType": "perfectwaste",
+    "zipcode": "3630",
+    "street": "Ahornvej",
+    "houseNumber": "3",
+    "providerAddress": "Ahornvej 3",
+    "verified": "2026-11-24",
+    "eventCount": 18,
+    "keys": [
+      "glasplast",
+      "pap",
+      "papirmetal",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Furesø": {
+    "municipality": "Furesø",
+    "apiType": "vestfor",
+    "zipcode": "3500",
+    "street": "Annexgårdsvej",
+    "houseNumber": "7",
+    "providerAddress": "Annexgårdsvej 7",
+    "verified": "2026-11-24",
+    "eventCount": 35,
+    "keys": [
+      "metalglas",
+      "pap",
+      "pappi",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Faaborg-Midtfyn": {
+    "municipality": "Faaborg-Midtfyn",
+    "apiType": "affaldonline",
+    "zipcode": "5792",
+    "street": "Bøjden",
+    "houseNumber": "14",
+    "providerAddress": "Bøjden 14",
+    "verified": "2026-11-24",
+    "eventCount": 58,
+    "keys": [
+      "pappapirglasmetal",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Gentofte": {
+    "municipality": "Gentofte",
+    "apiType": "renoweb",
+    "zipcode": "2870",
+    "street": "Almindingen",
+    "houseNumber": "12",
+    "providerAddress": "Almindingen 12",
+    "verified": "2026-11-24",
+    "eventCount": 8,
+    "keys": [
+      "farligtaffaldmiljoboks",
+      "haveaffald",
+      "pap",
+      "papirglas",
+      "plastmetal",
+      "restaffald",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Gladsaxe": {
+    "municipality": "Gladsaxe",
+    "apiType": "perfectwaste",
+    "zipcode": "2880",
+    "street": "Bagsværd Hovedgade",
+    "houseNumber": "150",
+    "providerAddress": "Bagsværd Hovedgade 150",
+    "verified": "2026-11-24",
+    "eventCount": 13,
+    "keys": [
+      "dagrenovation"
+    ],
+    "missingTypes": []
+  },
+  "Glostrup": {
+    "municipality": "Glostrup",
+    "apiType": "renoweb",
+    "zipcode": "2600",
+    "street": "Brøndbyvestervej",
+    "houseNumber": "24",
+    "providerAddress": "Brøndbyvestervej 24",
+    "verified": "2026-11-24",
+    "eventCount": 7,
+    "keys": [
+      "haveaffald",
+      "juletrae",
+      "metalglas",
+      "pap",
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Greve": {
+    "municipality": "Greve",
+    "apiType": "perfectwaste",
+    "zipcode": "2690",
+    "street": "Digetoften",
+    "houseNumber": "7",
+    "providerAddress": "Digetoften 7",
+    "verified": "2026-11-24",
+    "eventCount": 23,
+    "keys": [
+      "farligtaffald",
+      "haveaffald",
+      "pap",
+      "papirglas",
+      "plastmetalmdk",
+      "restaffaldmadaffald",
+      "storskrald",
+      "tekstil"
+    ],
+    "missingTypes": []
+  },
+  "Gribskov": {
+    "municipality": "Gribskov",
+    "apiType": "perfectwaste",
+    "zipcode": "3250",
+    "street": "Ammekær",
+    "houseNumber": "97",
+    "providerAddress": "Ammekær 97",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "genbrug",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Guldborgsund": {
+    "municipality": "Guldborgsund",
+    "apiType": "perfectwaste",
+    "zipcode": "4892",
+    "street": "Birkevænget",
+    "houseNumber": "7",
+    "providerAddress": "Birkevænget 7",
+    "verified": "2026-11-24",
+    "eventCount": 13,
+    "keys": [
+      "pappapirglasmetal",
+      "plastmadkarton",
+      "restaffaldmadaffald",
+      "storskraldogfarligtaffald"
+    ],
+    "missingTypes": []
+  },
+  "Haderslev": {
+    "municipality": "Haderslev",
+    "apiType": "provas",
+    "zipcode": "6100",
+    "street": "Aabenraavej",
+    "houseNumber": "27",
+    "providerAddress": "Aabenraavej 27",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "pappapirglasmetal",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Halsnæs": {
+    "municipality": "Halsnæs",
+    "apiType": "perfectwaste",
+    "zipcode": "3390",
+    "street": "Dalen",
+    "houseNumber": "2",
+    "providerAddress": "Dalen 2",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "pap",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Helsingør": {
+    "municipality": "Helsingør",
+    "apiType": "perfectwaste",
+    "zipcode": "3000",
+    "street": "Brorsonsvej",
+    "houseNumber": "12",
+    "providerAddress": "Brorsonsvej 12",
+    "verified": "2026-11-24",
+    "eventCount": 15,
+    "keys": [
+      "pappapir",
+      "plastmetal",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Herlev": {
+    "municipality": "Herlev",
+    "apiType": "vestfor",
+    "zipcode": "2730",
+    "street": "Egesvinget",
+    "houseNumber": "11",
+    "providerAddress": "Egesvinget 11",
+    "verified": "2026-11-24",
+    "eventCount": 50,
+    "keys": [
+      "haveaffald",
+      "juletrae",
+      "metalglas",
+      "pap",
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Herning": {
+    "municipality": "Herning",
+    "apiType": "herning",
+    "zipcode": "7400",
+    "street": "Birke Alle",
+    "houseNumber": "9",
+    "providerAddress": "Birke Alle 9 (Herning)",
+    "verified": "2026-11-24",
+    "eventCount": 4,
+    "keys": [
+      "pappapirglasmetal",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Hillerød": {
+    "municipality": "Hillerød",
+    "apiType": "perfectwaste",
+    "zipcode": "3320",
+    "street": "Bremerholmen",
+    "houseNumber": "28",
+    "providerAddress": "Bremerholmen 28",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "pap",
+      "papirmetal",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Hjørring": {
+    "municipality": "Hjørring",
+    "apiType": "renoweb",
+    "zipcode": "9800",
+    "street": "Borrisholtvej",
+    "houseNumber": "12",
+    "providerAddress": "Borrisholtvej 12",
+    "verified": "2026-11-24",
+    "eventCount": 2,
+    "keys": [
+      "papirglasmetalplast",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Holbæk": {
+    "municipality": "Holbæk",
+    "apiType": "affaldonline",
+    "zipcode": "4300",
+    "street": "Ahornstien",
+    "houseNumber": "7",
+    "providerAddress": "Ahornstien 7",
+    "verified": "2026-11-24",
+    "eventCount": 48,
+    "keys": [
+      "metalglas",
+      "pappapir",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Holstebro": {
+    "municipality": "Holstebro",
+    "apiType": "openexp",
+    "zipcode": "7500",
+    "street": "Blåmunkevej",
+    "houseNumber": "11",
+    "providerAddress": "Blåmunkevej 11",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "metalglas",
+      "pappi",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Horsens": {
+    "municipality": "Horsens",
+    "apiType": "perfectwaste",
+    "zipcode": "8700",
+    "street": "Allegade",
+    "houseNumber": "29",
+    "providerAddress": "Allegade 29 31",
+    "verified": "2026-11-24",
+    "eventCount": 11,
+    "keys": [
+      "papir",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Hvidovre": {
+    "municipality": "Hvidovre",
+    "apiType": "perfectwaste",
+    "zipcode": "2650",
+    "street": "Borrisvej",
+    "houseNumber": "27",
+    "providerAddress": "Borrisvej 27",
+    "verified": "2026-11-24",
+    "eventCount": 17,
+    "keys": [
+      "genbrug",
+      "juletrae",
+      "pap",
+      "papirmetal",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Høje-Taastrup": {
+    "municipality": "Høje-Taastrup",
+    "apiType": "perfectwaste",
+    "zipcode": "2640",
+    "street": "Berberisvej",
+    "houseNumber": "7",
+    "providerAddress": "Berberisvej 7",
+    "verified": "2026-11-24",
+    "eventCount": 26,
+    "keys": [
+      "metalglas",
+      "pap",
+      "pappi",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Hørsholm": {
+    "municipality": "Hørsholm",
+    "apiType": "perfectwaste",
+    "zipcode": "2970",
+    "street": "Gyvelvej",
+    "houseNumber": "14",
+    "providerAddress": "Gyvelvej 14",
+    "verified": "2026-11-24",
+    "eventCount": 25,
+    "keys": [
+      "farligtaffald",
+      "metalglas",
+      "pap",
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Ikast-Brande": {
+    "municipality": "Ikast-Brande",
+    "apiType": "ikastbrande",
+    "zipcode": "7430",
+    "street": "Bjørn Nørgårds Vej",
+    "houseNumber": "8",
+    "providerAddress": "Bjørn Nørgårds Vej 8 (7430)",
+    "verified": "2026-11-24",
+    "eventCount": 2,
+    "keys": [
+      "plastmdkglasmetal",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Ishøj": {
+    "municipality": "Ishøj",
+    "apiType": "vestfor",
+    "zipcode": "2635",
+    "street": "Birkevej",
+    "houseNumber": "25",
+    "providerAddress": "Birkevej 25",
+    "verified": "2026-11-24",
+    "eventCount": 35,
+    "keys": [
+      "haveaffald",
+      "juletrae",
+      "metalglas",
+      "pap",
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Jammerbugt": {
+    "municipality": "Jammerbugt",
+    "apiType": "renoweb",
+    "zipcode": "9440",
+    "street": "A P Nielsensvej",
+    "houseNumber": "8",
+    "providerAddress": "A P Nielsensvej 8",
+    "verified": "2026-11-24",
+    "eventCount": 2,
+    "keys": [
+      "genbrug",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Kalundborg": {
+    "municipality": "Kalundborg",
+    "apiType": "perfectwaste",
+    "zipcode": "4270",
+    "street": "Agerkrogen",
+    "houseNumber": "5",
+    "providerAddress": "Agerkrogen 5",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "pappapir",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Kerteminde": {
+    "municipality": "Kerteminde",
+    "apiType": "renoweb",
+    "zipcode": "5370",
+    "street": "Flaskevejen",
+    "houseNumber": "85",
+    "providerAddress": "Flaskevejen 85",
+    "verified": "2026-11-24",
+    "eventCount": 5,
+    "keys": [
+      "dagrenovation",
+      "genbrug",
+      "pappapirglasmetal",
+      "plast",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Kolding": {
+    "municipality": "Kolding",
+    "apiType": "kolding",
+    "zipcode": "6000",
+    "street": "A.L. Johansens Vej",
+    "houseNumber": "8",
+    "providerAddress": "A.L. Johansens Vej   8",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "pappapirglasmetal",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "København": {
+    "municipality": "København",
+    "apiType": "affaldkk",
+    "zipcode": "2450",
+    "street": "A.C. Meyers Vænge",
+    "houseNumber": "12",
+    "providerAddress": "A.C. Meyers Vænge 12",
+    "verified": "2026-11-24",
+    "eventCount": 9,
+    "keys": [
+      "bleaffald",
+      "elektronik",
+      "jern",
+      "madaffald",
+      "pap",
+      "papir",
+      "plast",
+      "restaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Køge": {
+    "municipality": "Køge",
+    "apiType": "perfectwaste",
+    "zipcode": "4600",
+    "street": "Brodalvej",
+    "houseNumber": "7",
+    "providerAddress": "Brodalvej 7",
+    "verified": "2026-11-24",
+    "eventCount": 16,
+    "keys": [
+      "farligtaffald",
+      "metalglas",
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald",
+      "tekstil"
+    ],
+    "missingTypes": []
+  },
+  "Langeland": {
+    "municipality": "Langeland",
+    "apiType": "affaldonline",
+    "zipcode": "5900",
+    "street": "Blandebjerg",
+    "houseNumber": "13",
+    "providerAddress": "Blandebjerg 13",
+    "verified": "2026-11-24",
+    "eventCount": 62,
+    "keys": [
+      "papirglasmetalplast",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Lejre": {
+    "municipality": "Lejre",
+    "apiType": "perfectwaste",
+    "zipcode": "4070",
+    "street": "Gershøjvej",
+    "houseNumber": "57",
+    "providerAddress": "Gershøjvej 57",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "farligtaffald",
+      "pappapir",
+      "plastmetalmdk",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Lemvig": {
+    "municipality": "Lemvig",
+    "apiType": "openexp",
+    "zipcode": "7660",
+    "street": "Bavnehøjvej",
+    "houseNumber": "21",
+    "providerAddress": "Bavnehøjvej 21",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "metalglas",
+      "pappi",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Lolland": {
+    "municipality": "Lolland",
+    "apiType": "perfectwaste",
+    "zipcode": "4960",
+    "street": "Alsøvej",
+    "houseNumber": "30",
+    "providerAddress": "Alsøvej 30",
+    "verified": "2026-11-24",
+    "eventCount": 13,
+    "keys": [
+      "pappapirglasmetal",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Lyngby-Taarbæk": {
+    "municipality": "Lyngby-Taarbæk",
+    "apiType": "perfectwaste",
+    "zipcode": "2830",
+    "street": "Bredevej",
+    "houseNumber": "15",
+    "providerAddress": "Bredevej 15",
+    "verified": "2026-11-24",
+    "eventCount": 11,
+    "keys": [
+      "farligtaffald",
+      "pap",
+      "papirglasmetalplast",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Mariagerfjord": {
+    "municipality": "Mariagerfjord",
+    "apiType": "renoweb",
+    "zipcode": "9550",
+    "street": "Bogfinkevej",
+    "houseNumber": "6",
+    "providerAddress": "Bogfinkevej 6",
+    "verified": "2026-11-24",
+    "eventCount": 2,
+    "keys": [
+      "papirglasmetalplast",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Middelfart": {
+    "municipality": "Middelfart",
+    "apiType": "affaldonlinepdf",
+    "zipcode": "5500",
+    "street": "Alrøvænget",
+    "houseNumber": "2",
+    "providerAddress": "Alrøvænget 2",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "metalglas",
+      "pappapir",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Morsø": {
+    "municipality": "Morsø",
+    "apiType": "affaldonline",
+    "zipcode": "7990",
+    "street": "Blidstrupvej",
+    "houseNumber": "8",
+    "providerAddress": "Blidstrupvej 8",
+    "verified": "2026-11-24",
+    "eventCount": 124,
+    "keys": [
+      "madaffald",
+      "metalglas",
+      "pappapir",
+      "plast",
+      "plastmadkarton",
+      "restaffald"
+    ],
+    "missingTypes": []
+  },
+  "Norddjurs": {
+    "municipality": "Norddjurs",
+    "apiType": "renodjurs",
+    "zipcode": "8585",
+    "street": "Alrøvej",
+    "houseNumber": "13",
+    "providerAddress": "Alrøvej 13",
+    "verified": "2026-11-24",
+    "eventCount": 3,
+    "keys": [
+      "metalglas",
+      "pappapir",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": [
+      "600/660 l restaffald, sommerhus 26+ med ugetømning i uge 23-34",
+      "240 l plast/kartoner, 11 tømninger årligt"
+    ]
+  },
+  "Nordfyns": {
+    "municipality": "Nordfyns",
+    "apiType": "openexp",
+    "zipcode": "5400",
+    "street": "Adelgade",
+    "houseNumber": "1",
+    "providerAddress": "Adelgade 1",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "metalglas",
+      "pappi",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Nyborg": {
+    "municipality": "Nyborg",
+    "apiType": "affaldonlinepdf",
+    "zipcode": "5800",
+    "street": "Boesensgade",
+    "houseNumber": "9",
+    "providerAddress": "Boesensgade 9",
+    "verified": "2026-11-24",
+    "eventCount": 39,
+    "keys": [
+      "pappapirglasmetal",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Næstved": {
+    "municipality": "Næstved",
+    "apiType": "perfectwaste",
+    "zipcode": "4700",
+    "street": "Anemonevej",
+    "houseNumber": "57",
+    "providerAddress": "Anemonevej 57",
+    "verified": "2026-11-24",
+    "eventCount": 19,
+    "keys": [
+      "metalglas",
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Odder": {
+    "municipality": "Odder",
+    "apiType": "renosyd",
+    "zipcode": "8300",
+    "street": "Bogfinkevej",
+    "houseNumber": "107",
+    "providerAddress": "Bogfinkevej 107, Saksild Str",
+    "verified": "2026-11-24",
+    "eventCount": 41,
+    "keys": [
+      "pappapirtekstil",
+      "plastmdkglasmetal",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Odense": {
+    "municipality": "Odense",
+    "apiType": "odense",
+    "zipcode": "5000",
+    "street": "Flakhaven",
+    "houseNumber": "2",
+    "providerAddress": "Flakhaven 2",
+    "verified": "2026-11-24",
+    "eventCount": 30,
+    "keys": [
+      "madaffald",
+      "metalglas",
+      "pappi",
+      "plastmadkarton",
+      "restaffald"
+    ],
+    "missingTypes": []
+  },
+  "Odsherred": {
+    "municipality": "Odsherred",
+    "apiType": "perfectwaste",
+    "zipcode": "4540",
+    "street": "Adelers Alle",
+    "houseNumber": "131",
+    "providerAddress": "Adelers Alle 131",
+    "verified": "2026-11-24",
+    "eventCount": 16,
+    "keys": [
+      "farligtaffald",
+      "metalglas",
+      "pappapir",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Randers": {
+    "municipality": "Randers",
+    "apiType": "renoweb",
+    "zipcode": "8900",
+    "street": "Adelgade",
+    "houseNumber": "13",
+    "providerAddress": "Adelgade 13",
+    "verified": "2026-11-24",
+    "eventCount": 1,
+    "keys": [
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Rebild": {
+    "municipality": "Rebild",
+    "apiType": "affaldonline",
+    "zipcode": "9530",
+    "street": "Bavnebakken",
+    "houseNumber": "87",
+    "providerAddress": "Bavnebakken 87",
+    "verified": "2026-11-24",
+    "eventCount": 60,
+    "keys": [
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Ringkøbing-Skjern": {
+    "municipality": "Ringkøbing-Skjern",
+    "apiType": "perfectwaste",
+    "zipcode": "6920",
+    "street": "Abildtrupvej",
+    "houseNumber": "15",
+    "providerAddress": "Abildtrupvej 15",
+    "verified": "2026-11-24",
+    "eventCount": 11,
+    "keys": [
+      "genbrug",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Roskilde": {
+    "municipality": "Roskilde",
+    "apiType": "perfectwaste",
+    "zipcode": "4000",
+    "street": "Bakkesvinget",
+    "houseNumber": "39",
+    "providerAddress": "Bakkesvinget 39",
+    "verified": "2026-11-24",
+    "eventCount": 15,
+    "keys": [
+      "farligtaffald",
+      "metalglas",
+      "pappi",
+      "restaffaldmadaffald",
+      "tekstil"
+    ],
+    "missingTypes": []
+  },
+  "Rudersdal": {
+    "municipality": "Rudersdal",
+    "apiType": "perfectwaste",
+    "zipcode": "2840",
+    "street": "Arnevangen",
+    "houseNumber": "18",
+    "providerAddress": "Arnevangen 18",
+    "verified": "2026-11-24",
+    "eventCount": 8,
+    "keys": [
+      "farligtaffald",
+      "haveaffald",
+      "pap",
+      "pappi",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Rødovre": {
+    "municipality": "Rødovre",
+    "apiType": "renoweb",
+    "zipcode": "2610",
+    "street": "Blistrupvej",
+    "houseNumber": "9",
+    "providerAddress": "Blistrupvej 9",
+    "verified": "2026-11-24",
+    "eventCount": 8,
+    "keys": [
+      "farligtaffaldmiljoboks",
+      "genbrug",
+      "haveaffald",
+      "metalglas",
+      "pap",
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Samsø": {
+    "municipality": "Samsø",
+    "apiType": "renoweb",
+    "zipcode": "8305",
+    "street": "Besser Hovedgade",
+    "houseNumber": "40",
+    "providerAddress": "Besser Hovedgade 40",
+    "verified": "2026-11-24",
+    "eventCount": 2,
+    "keys": [
+      "genbrug",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Silkeborg": {
+    "municipality": "Silkeborg",
+    "apiType": "affaldonlineweb",
+    "zipcode": "8600",
+    "street": "Aabenraavej",
+    "houseNumber": "41",
+    "providerAddress": "Aabenraavej 41 (8600 Silkeborg)",
+    "verified": "2026-11-24",
+    "eventCount": 3,
+    "keys": [
+      "pappapirglasmetal",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Skanderborg": {
+    "municipality": "Skanderborg",
+    "apiType": "renosyd",
+    "zipcode": "8680",
+    "street": "Alleen",
+    "houseNumber": "14",
+    "providerAddress": "Alleen 14",
+    "verified": "2026-11-24",
+    "eventCount": 52,
+    "keys": [
+      "pappapirtekstil",
+      "plastmdkglasmetal",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Skive": {
+    "municipality": "Skive",
+    "apiType": "openexp",
+    "zipcode": "7800",
+    "street": "Bilstrupparken",
+    "houseNumber": "23",
+    "providerAddress": "Bilstrupparken 23",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "metalglas",
+      "pappi",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Slagelse": {
+    "municipality": "Slagelse",
+    "apiType": "perfectwaste",
+    "zipcode": "4200",
+    "street": "Anne-Marievej",
+    "houseNumber": "12",
+    "providerAddress": "Anne-Marievej 12",
+    "verified": "2026-11-24",
+    "eventCount": 16,
+    "keys": [
+      "haveaffald",
+      "metalglas",
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Solrød": {
+    "municipality": "Solrød",
+    "apiType": "perfectwaste",
+    "zipcode": "2680",
+    "street": "Christians Torv",
+    "houseNumber": "56",
+    "providerAddress": "Christians Torv 56",
+    "verified": "2026-11-24",
+    "eventCount": 22,
+    "keys": [
+      "batterier",
+      "haveaffald",
+      "pap",
+      "papir",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Sorø": {
+    "municipality": "Sorø",
+    "apiType": "affaldonlinepdf",
+    "zipcode": "4173",
+    "street": "Alsted Vænge",
+    "houseNumber": "4",
+    "providerAddress": "Alsted Vænge 4",
+    "verified": "2026-11-24",
+    "eventCount": 67,
+    "keys": [
+      "haveaffald",
+      "metalglas",
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Stevns": {
+    "municipality": "Stevns",
+    "apiType": "perfectwaste",
+    "zipcode": "4652",
+    "street": "Abildvænget",
+    "houseNumber": "23",
+    "providerAddress": "Abildvænget 23",
+    "verified": "2026-11-24",
+    "eventCount": 14,
+    "keys": [
+      "farligtaffald",
+      "papirglas",
+      "plastmetalmdk",
+      "restaffaldmadaffald",
+      "tekstil"
+    ],
+    "missingTypes": []
+  },
+  "Struer": {
+    "municipality": "Struer",
+    "apiType": "openexp",
+    "zipcode": "7790",
+    "street": "Bøhlørevej",
+    "houseNumber": "4",
+    "providerAddress": "Bøhlørevej 4",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "metalglas",
+      "pappi",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Svendborg": {
+    "municipality": "Svendborg",
+    "apiType": "renoweb",
+    "zipcode": "5700",
+    "street": "Bagergade",
+    "houseNumber": "86",
+    "providerAddress": "Bagergade 86",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "farligtaffaldmiljoboks",
+      "haveaffald",
+      "pappapirglasmetal",
+      "plast",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Syddjurs": {
+    "municipality": "Syddjurs",
+    "apiType": "renodjurs",
+    "zipcode": "8400",
+    "street": "Ballevej",
+    "houseNumber": "20",
+    "providerAddress": "Ballevej 20",
+    "verified": "2026-11-24",
+    "eventCount": 3,
+    "keys": [
+      "papir",
+      "plastmdkglasmetal",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Sønderborg": {
+    "municipality": "Sønderborg",
+    "apiType": "renoweb",
+    "zipcode": "6400",
+    "street": "Avnbøløstenvej",
+    "houseNumber": "26",
+    "providerAddress": "Avnbøløstenvej 26",
+    "verified": "2026-11-24",
+    "eventCount": 3,
+    "keys": [
+      "papirglas",
+      "plastmetal",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Thisted": {
+    "municipality": "Thisted",
+    "apiType": "openexplive",
+    "zipcode": "7752",
+    "street": "Atriumvej",
+    "houseNumber": "18",
+    "providerAddress": "Atriumvej 18",
+    "verified": "2026-11-24",
+    "eventCount": 6,
+    "keys": [
+      "metalglas",
+      "pappi",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Tønder": {
+    "municipality": "Tønder",
+    "apiType": "wastewatch",
+    "zipcode": "6520",
+    "street": "Bakkevænget",
+    "houseNumber": "18",
+    "providerAddress": "Bakkevænget 18",
+    "verified": "2026-11-24",
+    "eventCount": 4,
+    "keys": [
+      "genbrug",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Tårnby": {
+    "municipality": "Tårnby",
+    "apiType": "perfectwaste",
+    "zipcode": "2791",
+    "street": "Alkmaar Alle",
+    "houseNumber": "82",
+    "providerAddress": "Alkmaar Alle 82",
+    "verified": "2026-11-24",
+    "eventCount": 12,
+    "keys": [
+      "farligtaffald",
+      "haveaffald",
+      "pap",
+      "plastmadkarton",
+      "restaffaldmadaffald",
+      "storskrald",
+      "tekstil"
+    ],
+    "missingTypes": []
+  },
+  "Vallensbæk": {
+    "municipality": "Vallensbæk",
+    "apiType": "vestfor",
+    "zipcode": "2625",
+    "street": "Bellishaven",
+    "houseNumber": "44",
+    "providerAddress": "Bellishaven 44",
+    "verified": "2026-11-24",
+    "eventCount": 34,
+    "keys": [
+      "haveaffald",
+      "metalglas",
+      "pap",
+      "pappi",
+      "restaffaldmadaffald",
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Varde": {
+    "municipality": "Varde",
+    "apiType": "renoweb",
+    "zipcode": "6854",
+    "street": "Arvevej",
+    "houseNumber": "4",
+    "providerAddress": "Arvevej 4",
+    "verified": "2026-11-24",
+    "eventCount": 1,
+    "keys": [
+      "plastmdkglasmetal"
+    ],
+    "missingTypes": [
+      "240 L todelt skraldespand med sæson tømning ved sommerhuse"
+    ]
+  },
+  "Vejen": {
+    "municipality": "Vejen",
+    "apiType": "perfectwaste",
+    "zipcode": "6600",
+    "street": "Baslund",
+    "houseNumber": "36",
+    "providerAddress": "Baslund 36",
+    "verified": "2026-11-24",
+    "eventCount": 21,
+    "keys": [
+      "pappapirglasmetal",
+      "plastmadkarton",
+      "restaffald",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Vejle": {
+    "municipality": "Vejle",
+    "apiType": "affaldonline",
+    "zipcode": "7323",
+    "street": "Ane Sørensens Vej",
+    "houseNumber": "23",
+    "providerAddress": "Ane Sørensens Vej 23",
+    "verified": "2026-11-24",
+    "eventCount": 5,
+    "keys": [
+      "dagrenovation",
+      "genbrug"
+    ],
+    "missingTypes": []
+  },
+  "Viborg": {
+    "municipality": "Viborg",
+    "apiType": "affaldonline",
+    "zipcode": "8800",
+    "street": "A.S. Ørsteds Vej",
+    "houseNumber": "22",
+    "providerAddress": "A.S. Ørsteds Vej 22",
+    "verified": "2026-11-24",
+    "eventCount": 15,
+    "keys": [
+      "madaffald",
+      "metalglas",
+      "pappapir",
+      "plastmadkarton",
+      "restaffald"
+    ],
+    "missingTypes": []
+  },
+  "Vordingborg": {
+    "municipality": "Vordingborg",
+    "apiType": "renoweb",
+    "zipcode": "4760",
+    "street": "Amaliehaven",
+    "houseNumber": "21",
+    "providerAddress": "Amaliehaven 21",
+    "verified": "2026-11-24",
+    "eventCount": 1,
+    "keys": [
+      "storskrald"
+    ],
+    "missingTypes": []
+  },
+  "Ærø": {
+    "municipality": "Ærø",
+    "apiType": "affaldonline",
+    "zipcode": "5960",
+    "street": "Barkvej",
+    "houseNumber": "18",
+    "providerAddress": "Barkvej 18",
+    "verified": "2026-11-24",
+    "eventCount": 62,
+    "keys": [
+      "papirglas",
+      "plastmdkglasmetal",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Aabenraa": {
+    "municipality": "Aabenraa",
+    "apiType": "renoweb",
+    "zipcode": "6200",
+    "street": "Barsmark Bygade",
+    "houseNumber": "52",
+    "providerAddress": "Barsmark Bygade 52",
+    "verified": "2026-11-24",
+    "eventCount": 3,
+    "keys": [
+      "pappapirglasmetal",
+      "plastmadkarton",
+      "restaffaldmadaffald"
+    ],
+    "missingTypes": []
+  },
+  "Aalborg": {
+    "municipality": "Aalborg",
+    "apiType": "renoweb",
+    "zipcode": "9280",
+    "street": "Aagade",
+    "houseNumber": "14",
+    "providerAddress": "Aagade 14",
+    "verified": "2026-11-24",
+    "eventCount": 3,
+    "keys": [
+      "haveaffald",
+      "pappi",
+      "restaffald"
+    ],
+    "missingTypes": []
+  },
+  "Aarhus": {
+    "municipality": "Aarhus",
+    "apiType": "aarhus",
+    "zipcode": "8520",
+    "street": "Abildhaven",
+    "houseNumber": "15",
+    "providerAddress": "Abildhaven 15",
+    "verified": "2026-11-24",
+    "eventCount": 255,
+    "keys": [
+      "glas",
+      "jern",
+      "madaffald",
+      "pap",
+      "papir",
+      "plast",
+      "plastmadkarton",
+      "restaffald",
+      "tekstil"
+    ],
+    "missingTypes": []
+  }
+}
