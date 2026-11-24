@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+  Dev preview of the Pickup calendar widget with a simulated Homey and made-up data
+  (today = Tuesday 24 November 2026). Render: node scripts/render.mjs calendar
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../widgets/calendar/public/widget.css">
+  <script src="../widgets/calendar/public/widget.js"></script>
+  <style>
+    html, body { margin: 0; }
+    body { font-family: Roboto, -apple-system, system-ui, sans-serif; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; background: #888; }
+    .board { padding: 20px; border-radius: 20px; display: flex; gap: 20px; align-items: flex-start; }
+    .board.dark { background: #14151B; }
+    .board.light { background: #F4F4FA; }
+    .card { border-radius: 14px; padding: 16px; box-sizing: border-box; }
+    .dark .card { background: #1F2029; --homey-background-color: #1F2029; --homey-text-color: #E4E4E7; --homey-text-color-light: #999AA3; }
+    .light .card { background: #FFFFFF; --homey-background-color: #FFFFFF; --homey-text-color: #1A1B21; --homey-text-color-light: #6B6D76; }
+    .w358 { width: 358px; } .w260 { width: 260px; }
+  </style>
+</head>
+<body>
+  <script>
+    var ICON = '../widgets/upcoming/public/icons/';
+    var NAMES = { restaffaldmadaffald: 'Rest- & madaffald', pappi: 'Pap, papir & plast', metalglas: 'Metal & glas', farligtaffald: 'Farligt affald', tekstil: 'Tekstilaffald', haveaffald: 'Haveaffald' };
+    var PICKS = {
+      '2026-11-24': ['restaffaldmadaffald'], '2026-11-25': ['farligtaffald', 'tekstil'], '2026-12-03': ['pappi'],
+      '2026-12-08': ['restaffaldmadaffald'], '2026-12-11': ['metalglas'], '2026-12-22': ['restaffaldmadaffald'],
+      '2026-12-24': ['pappi', 'haveaffald', 'metalglas'],
+    };
+    function data(weeks) {
+      var days = [];
+      var start = Date.UTC(2026, 10, 23);
+      var legend = [];
+      for (var i = 0; i < weeks * 7; i++) {
+        var dt = new Date(start + i * 864e5);
+        var iso = dt.toISOString().slice(0, 10);
+        var keys = PICKS[iso] || [];
+        keys.forEach(function (k) { if (!legend.some(function (l) { return l.key === k; })) legend.push({ key: k, name: NAMES[k], icon: ICON + k + '.svg' }); });
+        days.push({ date: iso, day: dt.getUTCDate(), month: dt.getUTCDate() === 1 ? 'dec.' : '', today: iso === '2026-11-24', past: iso < '2026-11-24', label: iso,
+          fractions: keys.map(function (k) { return { key: k, name: NAMES[k], icon: ICON + k + '.svg' }; }) });
+      }
+      return { status: 'ok', name: 'Bygaden 3', title: 'November – december', weekdays: ['M', 'T', 'O', 'T', 'F', 'L', 'S'], days: days, legend: legend };
+    }
+    [['dark', 'w358', { weeks: 5 }], ['dark', 'w260', { weeks: 3, legend: false }], ['light', 'w358', { weeks: 5 }]].forEach(function (c, n) {
+      var board = document.querySelector('.board.' + c[0]);
+      if (!board) { board = document.createElement('div'); board.className = 'board ' + c[0]; document.body.appendChild(board); }
+      var card = document.createElement('div');
+      card.className = 'card homey-widget ' + c[1];
+      var root = document.createElement('div');
+      card.appendChild(root);
+      board.appendChild(card);
+      AffaldCalendar.mount({
+        getSettings: function () { return c[2]; },
+        api: function () { return Promise.resolve(data(c[2].weeks)); },
+        ready: function () {}, setHeight: function () {}, on: function () {},
+      }, { root: root, frame: card });
+    });
+  </script>
+</body>
+</html>

@@ -13,7 +13,7 @@ This is a TypeScript port of [briis/affalddk](https://github.com/briis/affalddk)
   - Trigger *Next pickup changed*.
   - Conditions *collected in exactly N days* and *collected within N days*.
   - Action *Refresh pickup data*.
-- **Widget** *Waste pickups*: lists the upcoming pickup days with icons, in light and dark theme.
+- **Widgets:** *Waste pickups* lists the upcoming pickup days with icons. *Pickup calendar* shows whole weeks from this Monday, with the waste type icons on the pickup days. Both work in light and dark theme.
 
 Data is fetched once a day, between 03:00 and 06:00. The day counts are recomputed every hour. After the *switch hour* (default 15:00) on a pickup day, "next pickup" moves on to the following pickup, as upstream does.
 

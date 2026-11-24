@@ -1,0 +1,29 @@
+{
+  "name": { "en": "Pickup calendar", "da": "Tømmekalender" },
+  "height": 280,
+  "transparent": false,
+  "settings": [
+    {
+      "id": "device",
+      "type": "autocomplete",
+      "title": { "en": "Address", "da": "Adresse" }
+    },
+    {
+      "id": "weeks",
+      "type": "number",
+      "title": { "en": "Weeks to show", "da": "Antal uger" },
+      "value": 5,
+      "min": 1,
+      "max": 8
+    },
+    {
+      "id": "legend",
+      "type": "checkbox",
+      "title": { "en": "Show legend", "da": "Vis forklaring" },
+      "value": true
+    }
+  ],
+  "api": {
+    "getCalendar": { "method": "GET", "path": "/calendar" }
+  }
+}

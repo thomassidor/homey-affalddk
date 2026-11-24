@@ -5,7 +5,7 @@ Tilføj din adresse som en enhed, og du får:
 - Næste tømning med dato og affaldstyper
 - En flow-trigger der minder dig om tømningen på et valgt klokkeslæt, f.eks. kl. 19 aftenen før papirspanden tømmes
 - Flow-betingelser som "Papir tømmes i morgen" eller "Enhver affaldstype tømmes inden for 2 dage"
-- En dashboard-widget der viser de kommende tømninger med ikoner
+- To dashboard-widgets: de kommende tømninger som liste, og en tømmekalender med affaldstypernes ikoner på tømmedagene
 
 Omkring 90 kommuner understøttes via AffaldOnline, Perfect Waste, RenoWeb, Open Experience, Provas, RenoDjurs, RenoSyd, Vest Forbrænding, WasteWatch, Kredsløb (Aarhus), Odense Renovation, København, Herning, Ikast-Brande og Kolding.
 

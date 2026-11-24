@@ -1,0 +1,67 @@
+/*
+ * Pickup calendar widget: whole weeks from this Monday, the pickup days drawn as the
+ * waste type icons. Styled like the Waste pickups widget (Widgetkeeper's way): Homey's
+ * widget card, token aliases with the dark theme's values as fallbacks.
+ */
+.ac {
+  --ac-bg: var(--homey-background-color, #1F2029);
+  --ac-text: var(--homey-text-color, #E4E4E7);
+  --ac-muted: var(--homey-text-color-light, #999AA3);
+  --ac-neutral: color-mix(in srgb, var(--ac-text) 7%, var(--ac-bg));
+  --ac-today: #267700; /* Homey's green-700, as the list widget's "today" */
+  --ac-fs-default: var(--homey-font-size-default, 17px); --ac-lh-default: var(--homey-line-height-default, 24px);
+  --ac-fs-small: var(--homey-font-size-small, 14px); --ac-lh-small: var(--homey-line-height-small, 20px);
+  --ac-fs-label: 12px; --ac-lh-label: 16px;
+  --ac-bold: var(--homey-font-weight-bold, 700);
+  --ac-medium: var(--homey-font-weight-medium, 500);
+  --ac-gap: 5px;
+}
+
+html { font-family: Roboto, -apple-system, system-ui, sans-serif; }
+
+.ac { display: flex; flex-direction: column; gap: var(--homey-su-3, 12px); min-width: 0; color: var(--ac-text); }
+.ac * { box-sizing: border-box; }
+
+.ac-title { font-size: var(--ac-fs-default); line-height: var(--ac-lh-default); font-weight: var(--ac-bold); }
+
+.ac-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--ac-gap); }
+.ac-wd {
+  text-align: center; font-size: var(--ac-fs-label); line-height: var(--ac-lh-label); font-weight: var(--ac-bold);
+  color: var(--ac-muted); padding-bottom: 2px;
+}
+
+/* A day: its number, or the waste type's icon filling the cell. */
+.ac-day {
+  position: relative; aspect-ratio: 1; border-radius: 9px; display: grid; place-items: center; min-width: 0;
+  font-size: var(--ac-fs-small); line-height: 1; font-weight: var(--ac-medium); font-variant-numeric: tabular-nums;
+  color: var(--ac-text);
+}
+.ac-day.past { color: color-mix(in srgb, var(--ac-muted) 55%, var(--ac-bg)); }
+.ac-day.weekend:not(.past) { color: var(--ac-muted); }
+.ac-day .ac-month {
+  position: absolute; top: 2px; left: 0; right: 0; text-align: center;
+  font-size: 9px; line-height: 1; font-weight: var(--ac-bold); text-transform: uppercase; letter-spacing: .04em; color: var(--ac-muted);
+}
+.ac-day.has-month .ac-num { margin-top: 8px; }
+.ac-day img.main { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: inherit; }
+.ac-day img.sub {
+  position: absolute; right: -3px; bottom: -3px; width: 46%; height: 46%; border-radius: 5px;
+  box-shadow: 0 0 0 2px var(--ac-bg);
+}
+.ac-day .ac-more {
+  position: absolute; right: -4px; bottom: -4px; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; line-height: 1; font-weight: var(--ac-bold); background: var(--ac-neutral); color: var(--ac-text);
+  box-shadow: 0 0 0 2px var(--ac-bg);
+}
+/* Today: a green ring (around the icon on a pickup day, or the number). */
+.ac-day.today { box-shadow: 0 0 0 2px var(--ac-bg), 0 0 0 4px var(--ac-today); }
+.ac-day.today:not(.pick) { background: var(--ac-today); color: #fff; font-weight: var(--ac-bold); box-shadow: none; }
+
+/* Legend: the waste types in the visible weeks. */
+.ac-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.ac-legend span { display: inline-flex; align-items: center; gap: 6px; min-width: 0; font-size: var(--ac-fs-label); line-height: var(--ac-lh-label); color: var(--ac-muted); }
+.ac-legend img { width: 16px; height: 16px; border-radius: 4px; flex: none; }
+
+.ac-message { font-size: var(--ac-fs-small); line-height: var(--ac-lh-small); color: var(--ac-muted); }
+.ac-message.error { color: var(--homey-color-red, #F25F5C); }

@@ -37,6 +37,18 @@ export function shortDate(date: DateStr, lang: Lang): string {
   return `${weekdayName(date, lang, true)} ${d}/${m}`;
 }
 
+/** "november" / "November"; `short`: "nov." / "Nov" */
+export function monthName(date: DateStr, lang: Lang, short = false): string {
+  const [y, m] = date.split('-').map(Number);
+  return new Intl.DateTimeFormat(lang === 'da' ? 'da-DK' : 'en-GB', { month: short ? 'short' : 'long', timeZone: 'UTC' })
+    .format(new Date(Date.UTC(y, m - 1, 1)));
+}
+
+/** "M T O T F L S" / "M T W T F S S" */
+export function weekdayLetters(lang: Lang): string[] {
+  return TR[lang].daynames.weekdays.map((d) => d.charAt(0).toUpperCase());
+}
+
 /** "torsdag d. 27. november" / "Thursday 27 November" */
 export function longDate(date: DateStr, lang: Lang): string {
   const [y, m, d] = date.split('-').map(Number);

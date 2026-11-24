@@ -36,6 +36,9 @@ const SHOTS = {
   widget: [
     ['widget-all', '/dev/preview.html', 1300, 900],
   ],
+  calendar: [
+    ['calendar-all', '/dev/calendar-preview.html', 1100, 900],
+  ],
   review: [
     ['store-art', '/dev/store-art.html', 1200, 3800],
   ],
@@ -47,6 +50,8 @@ const SHOTS = {
   previews: [
     ['../widgets/upcoming/preview-dark', '/dev/widget-previews.html?theme=dark', 1024, 1024, 1],
     ['../widgets/upcoming/preview-light', '/dev/widget-previews.html?theme=light', 1024, 1024, 1],
+    ['../widgets/calendar/preview-dark', '/dev/widget-previews.html?theme=dark&w=calendar', 1024, 1024, 1],
+    ['../widgets/calendar/preview-light', '/dev/widget-previews.html?theme=light&w=calendar', 1024, 1024, 1],
   ],
 };
 
