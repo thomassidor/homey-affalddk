@@ -73,7 +73,10 @@ The day counts are logged in Insights. The device's settings let you choose when
 
 Affald DK needs a **Homey Pro** with Homey 12.2 or newer.
 
-The app is on its way to the Homey App Store. Until it's published, install it from source:
+**[Install the test version from the Homey App Store](https://homey.app/en-dk/app/com.thomassidor.affalddk/test/)** (1.0.0, in testing).
+
+<details>
+<summary>Or install from source</summary>
 
 ```bash
 npm install -g homey        # Homey's command line tool (needs Node.js)
@@ -83,6 +86,8 @@ cd homey-affalddk
 npm install
 homey app install
 ```
+
+</details>
 
 ### 2. Add your address
 
