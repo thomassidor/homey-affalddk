@@ -39,6 +39,16 @@ const SHOTS = {
   calendar: [
     ['calendar-all', '/dev/calendar-preview.html', 1100, 900],
   ],
+  // README screenshots (made-up data), cropped to the content
+  docs: [
+    ['../docs/screenshots/widget-list-dark', '/dev/preview.html?only=dark&docs=1', 600, 700],
+    ['../docs/screenshots/widget-list-light', '/dev/preview.html?only=light&docs=1', 600, 700],
+    ['../docs/screenshots/widget-list-compact', '/dev/preview.html?only=dark-compact&docs=1', 600, 700],
+    ['../docs/screenshots/widget-calendar-dark', '/dev/calendar-preview.html?only=0&docs=1', 600, 900],
+    ['../docs/screenshots/widget-calendar-light', '/dev/calendar-preview.html?only=2&docs=1', 600, 900],
+    ['../docs/screenshots/pair-search', '/dev/pair-preview.html?step=1&docs=1', 422, 1000],
+    ['../docs/screenshots/pair-choose', '/dev/pair-preview.html?step=3&docs=1', 422, 1500],
+  ],
   review: [
     ['store-art', '/dev/store-art.html', 1200, 3800],
   ],
@@ -100,7 +110,8 @@ for (const g of groups) {
         const { tmpdir } = require('node:os');
         const profile = mkdtempSync(join(tmpdir(), 'affald-render-'));
         try {
-          execFileSync(workerData.browser, ['--headless=new', '--disable-gpu', '--hide-scrollbars', '--virtual-time-budget=3000',
+          require('node:fs').mkdirSync(require('node:path').dirname(workerData.file), { recursive: true });
+        execFileSync(workerData.browser, ['--headless=new', '--disable-gpu', '--hide-scrollbars', '--virtual-time-budget=3000',
             '--user-data-dir=' + profile, '--force-device-scale-factor=' + workerData.scale, '--default-background-color=00000000', '--window-size=' + workerData.w + ',' + workerData.h,
             '--screenshot=' + workerData.file, workerData.url], { stdio: 'ignore' });
         } finally { rmSync(profile, { recursive: true, force: true }); }
@@ -109,6 +120,11 @@ for (const g of groups) {
       worker.on('message', res);
       worker.on('error', rej);
     });
+    if (g === 'docs') {
+      const sharp = (await import('sharp')).default;
+      const buf = await sharp(file).trim({ threshold: 1 }).png().toBuffer();
+      (await import('node:fs')).writeFileSync(file, buf);
+    }
     console.log('wrote', file.slice(ROOT.length + 1));
   }
 }

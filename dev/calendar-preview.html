@@ -18,6 +18,8 @@
     .dark .card { background: #1F2029; --homey-background-color: #1F2029; --homey-text-color: #E4E4E7; --homey-text-color-light: #999AA3; }
     .light .card { background: #FFFFFF; --homey-background-color: #FFFFFF; --homey-text-color: #1A1B21; --homey-text-color-light: #6B6D76; }
     .w358 { width: 358px; } .w260 { width: 260px; }
+    body.docs { background: transparent; padding: 0; }
+
   </style>
 </head>
 <body>
@@ -43,7 +45,10 @@
       }
       return { status: 'ok', name: 'Bygaden 3', title: 'November – december', weekdays: ['M', 'T', 'O', 'T', 'F', 'L', 'S'], days: days, legend: legend };
     }
+    var q = new URLSearchParams(location.search);
+    if (q.get('docs')) document.body.classList.add('docs');
     [['dark', 'w358', { weeks: 5 }], ['dark', 'w260', { weeks: 3, legend: false }], ['light', 'w358', { weeks: 5 }]].forEach(function (c, n) {
+      if (q.get('only') && q.get('only') !== String(n)) return;
       var board = document.querySelector('.board.' + c[0]);
       if (!board) { board = document.createElement('div'); board.className = 'board ' + c[0]; document.body.appendChild(board); }
       var card = document.createElement('div');

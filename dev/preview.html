@@ -27,6 +27,8 @@
     }
     .card { --homey-font-size-default: 17px; --homey-line-height-default: 24px; --homey-font-size-small: 14px; --homey-line-height-small: 20px; }
     .w358 { width: 358px; }
+    body.docs { background: transparent; padding: 0; }
+
     .w240 { width: 240px; }
   </style>
 </head>
@@ -53,6 +55,7 @@
       { id: 'dark-empty', theme: 'dark', cls: 'w358', data: { status: 'no_device', message: 'Vælg en adresse i widgettens indstillinger', pickups: [] } },
     ];
     var only = new URLSearchParams(location.search).get('only');
+    if (new URLSearchParams(location.search).get('docs')) document.body.classList.add('docs');
     var boards = {};
     CARDS.filter(function (c) { return !only || c.id === only; }).forEach(function (c) {
       var board = boards[c.theme];

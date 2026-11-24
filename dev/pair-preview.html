@@ -18,6 +18,7 @@
     .head .title { flex: 1; font-size: 15px; font-weight: 500; color: #6a7180; }
     .head .shut { font-size: 17px; color: #b3b8c0; }
     .body { padding: 0 16px; }
+    body.docs { background: transparent; }
   </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
   </div>
   <script>
     var params = new URLSearchParams(location.search);
+    if (params.get('docs')) document.body.classList.add('docs');
     var step = Number(params.get('step') || 1);
     var lang = params.get('lang') || 'da';
     var ICON = '../widgets/upcoming/public/icons/';
