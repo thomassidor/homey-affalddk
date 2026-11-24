@@ -1,5 +1,6 @@
 import Homey from 'homey';
 import { setMissingTypeLogger } from './lib/affalddk';
+import { widgetIconPath } from './lib/icons';
 import { daysText, fractionName, longDate, shortDate, toLang } from './lib/names';
 import type { AddressDevice } from './drivers/address/device';
 
@@ -65,7 +66,7 @@ class AffaldApp extends Homey.App {
         when: daysText(d.daysUntil, lang),
         dateLabel: shortDate(d.date, lang),
         dateLong: longDate(d.date, lang),
-        fractions: d.keys.map((key) => ({ key, name: fractionName(key, lang), icon: `icons/${key}.svg` })),
+        fractions: d.keys.map((key) => ({ key, name: fractionName(key, lang), icon: widgetIconPath(key) })),
       })),
     };
   }

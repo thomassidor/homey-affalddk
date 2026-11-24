@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+  Dev preview of the dashboard widget with a simulated Homey and made-up data.
+  Serve the repo root (python -m http.server 8765) and open /dev/preview.html,
+  or render it with `node scripts/render.mjs`. ?only=<card id> shows one card.
+  The token values are Homey's own (read from a Homey's _homey-variables.css by Widgetkeeper).
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../widgets/upcoming/public/widget.css">
+  <script src="../widgets/upcoming/public/widget.js"></script>
+  <style>
+    html, body { margin: 0; }
+    body { font-family: Roboto, -apple-system, system-ui, sans-serif; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; background: #888; }
+    .board { padding: 20px; border-radius: 20px; display: flex; gap: 20px; align-items: flex-start; }
+    .board.dark { background: #14151B; }
+    .board.light { background: #F4F4FA; }
+    .card { border-radius: 14px; padding: 16px; box-sizing: border-box; }
+    .dark .card {
+      background: #1F2029;
+      --homey-background-color: #1F2029; --homey-text-color: #E4E4E7; --homey-text-color-light: #999AA3;
+    }
+    .light .card {
+      background: #FFFFFF;
+      --homey-background-color: #FFFFFF; --homey-text-color: #1A1B21; --homey-text-color-light: #6B6D76;
+    }
+    .card { --homey-font-size-default: 17px; --homey-line-height-default: 24px; --homey-font-size-small: 14px; --homey-line-height-small: 20px; }
+    .w358 { width: 358px; }
+    .w240 { width: 240px; }
+  </style>
+</head>
+<body>
+  <script>
+    var ICON = '../widgets/upcoming/public/icons/';
+    function f(key, name) { return { key: key, name: name, icon: ICON + key + '.svg' }; }
+    var DATA = {
+      status: 'ok', name: 'Bygaden 3',
+      pickups: [
+        { daysUntil: 0, when: 'I dag', dateLabel: 'Tir 24/11', dateLong: 'tirsdag d. 24. november', fractions: [f('restaffaldmadaffald', 'Rest- & madaffald')] },
+        { daysUntil: 1, when: 'I morgen', dateLabel: 'Ons 25/11', dateLong: 'onsdag d. 25. november', fractions: [f('farligtaffald', 'Farligt affald'), f('tekstil', 'Tekstilaffald')] },
+        { daysUntil: 5, when: 'Om 5 dage', dateLabel: 'Søn 29/11', dateLong: 'søndag d. 29. november', fractions: [f('glas', 'Glas'), f('papir', 'Papir'), f('pap', 'Pap')] },
+        { daysUntil: 9, when: 'Om 9 dage', dateLabel: 'Tor 3/12', dateLong: 'torsdag d. 3. december', fractions: [f('pappi', 'Pap, papir & plast')] },
+        { daysUntil: 17, when: 'Om 17 dage', dateLabel: 'Fre 11/12', dateLong: 'fredag d. 11. december', fractions: [f('metalglas', 'Metal & glas')] },
+      ],
+    };
+    var CARDS = [
+      { id: 'dark', theme: 'dark', cls: 'w358', settings: { rows: 4 } },
+      { id: 'dark-compact', theme: 'dark', cls: 'w240', settings: { rows: 4, compact: true } },
+      { id: 'light', theme: 'light', cls: 'w358', settings: { rows: 4 } },
+      { id: 'light-compact', theme: 'light', cls: 'w240', settings: { rows: 4, compact: true } },
+      { id: 'dark-noicons', theme: 'dark', cls: 'w358', settings: { rows: 3, icons: false } },
+      { id: 'dark-empty', theme: 'dark', cls: 'w358', data: { status: 'no_device', message: 'Vælg en adresse i widgettens indstillinger', pickups: [] } },
+    ];
+    var only = new URLSearchParams(location.search).get('only');
+    var boards = {};
+    CARDS.filter(function (c) { return !only || c.id === only; }).forEach(function (c) {
+      var board = boards[c.theme];
+      if (!board || only) {
+        board = boards[c.theme] = document.createElement('div');
+        board.className = 'board ' + c.theme;
+        document.body.appendChild(board);
+      }
+      var card = document.createElement('div');
+      card.className = 'card homey-widget ' + c.cls;
+      card.id = c.id;
+      var root = document.createElement('div');
+      card.appendChild(root);
+      board.appendChild(card);
+      var data = JSON.parse(JSON.stringify(c.data || DATA));
+      if (c.settings && c.settings.rows) data.pickups = data.pickups.slice(0, c.settings.rows);
+      var fakeHomey = {
+        getSettings: function () { return c.settings || {}; },
+        api: function () { return Promise.resolve(data); },
+        ready: function () {}, setHeight: function () {}, on: function () {},
+      };
+      AffaldPickups.mount(fakeHomey, { root: root, frame: card });
+    });
+  </script>
+</body>
+</html>

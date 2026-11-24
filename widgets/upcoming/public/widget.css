@@ -1,0 +1,87 @@
+/*
+ * Waste pickups widget. Styled the Widgetkeeper way: it sits on Homey's own widget
+ * card (`body.homey-widget`, 16 px padding), every colour and size is a Homey token
+ * (https://apps.developer.homey.app/the-basics/widgets/styling) aliased on the root,
+ * with the dark theme's values as fallbacks for use outside Homey (dev/preview.html).
+ */
+.ap {
+  --ap-bg: var(--homey-background-color, #1F2029);
+  --ap-text: var(--homey-text-color, #E4E4E7);
+  --ap-muted: var(--homey-text-color-light, #999AA3);
+  /* Variables' grey: the pill for "tomorrow" and the badge, on the card */
+  --ap-neutral: color-mix(in srgb, var(--ap-text) 9%, var(--ap-bg));
+  /* Today: Homey's green as a solid pill (green-700, white text passes 4.5:1 in both themes) */
+  --ap-today: #267700;
+  --ap-on-today: #ffffff;
+  /* Homey's type scale: only these size/line-height pairs are used natively */
+  --ap-fs-default: var(--homey-font-size-default, 17px); --ap-lh-default: var(--homey-line-height-default, 24px);
+  --ap-fs-small: var(--homey-font-size-small, 14px); --ap-lh-small: var(--homey-line-height-small, 20px);
+  --ap-fs-label: 12px; --ap-lh-label: 16px; /* a step below Homey's scale, as Widgetkeeper's labels */
+  --ap-bold: var(--homey-font-weight-bold, 700);
+  --ap-medium: var(--homey-font-weight-medium, 500);
+  --ap-icon: 40px;
+}
+
+/* On html, so the font Homey's widget stylesheet sets on body wins; this is the fallback outside Homey. */
+html { font-family: Roboto, -apple-system, system-ui, sans-serif; }
+
+.ap { display: flex; flex-direction: column; min-width: 0; color: var(--ap-text); }
+.ap * { box-sizing: border-box; }
+
+/* One row per pickup day: icon, waste types over the date, and when. */
+.ap-list { display: flex; flex-direction: column; gap: var(--homey-su-4, 16px); }
+.ap-row {
+  display: grid; grid-template-columns: var(--ap-icon) minmax(0, 1fr) auto; column-gap: var(--homey-su-3, 12px);
+  align-items: center; min-width: 0;
+}
+
+/* The waste type's icon (upstream's coloured tiles), with a count badge when more types go that day. */
+.ap-icon { position: relative; width: var(--ap-icon); height: var(--ap-icon); }
+.ap-icon img { display: block; width: 100%; height: 100%; border-radius: 10px; }
+/* A second waste type the same day: its own icon as a small tile on the corner; three or more: a count. */
+.ap-icon .ap-sub, .ap-icon .ap-more {
+  position: absolute; right: -6px; bottom: -6px; width: 22px; height: 22px; border-radius: 7px;
+  box-shadow: 0 0 0 2px var(--ap-bg);
+}
+.ap-icon .ap-more {
+  display: flex; align-items: center; justify-content: center; padding: 0 4px; width: auto; min-width: 22px; border-radius: 11px;
+  font-size: var(--ap-fs-label); line-height: 1; font-weight: var(--ap-bold); font-variant-numeric: tabular-nums;
+  background: var(--ap-neutral); color: var(--ap-text);
+}
+.ap.no-icons .ap-row { grid-template-columns: minmax(0, 1fr) auto; }
+.ap.no-icons .ap-icon { display: none; }
+
+.ap-text { min-width: 0; }
+.ap-name {
+  font-size: var(--ap-fs-default); line-height: var(--ap-lh-default); font-weight: var(--ap-bold);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.ap-date {
+  font-size: var(--ap-fs-small); line-height: var(--ap-lh-small); color: var(--ap-muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* When: plain text, a grey pill for tomorrow, a green one for today. */
+.ap-when {
+  font-size: var(--ap-fs-small); line-height: var(--ap-lh-small); font-weight: var(--ap-medium);
+  color: var(--ap-muted); white-space: nowrap; font-variant-numeric: tabular-nums; text-align: right;
+}
+.ap-row.tomorrow .ap-when, .ap-row.today .ap-when {
+  height: 30px; padding: 0 12px; border-radius: 15px; display: flex; align-items: center;
+  font-weight: var(--ap-bold);
+}
+.ap-row.tomorrow .ap-when { background: var(--ap-neutral); color: var(--ap-text); }
+.ap-row.today .ap-when { background: var(--ap-today); color: var(--ap-on-today); }
+
+/* Compact: one line per day, for narrow or short spots on a dashboard. */
+.ap.compact .ap-list { gap: var(--homey-su-3, 12px); }
+.ap.compact { --ap-icon: 28px; }
+.ap.compact .ap-icon img { border-radius: 7px; }
+.ap.compact .ap-date { display: none; }
+.ap.compact .ap-name { font-size: var(--ap-fs-small); line-height: var(--ap-lh-small); }
+.ap.compact .ap-row.tomorrow .ap-when, .ap.compact .ap-row.today .ap-when { height: 24px; padding: 0 10px; border-radius: 12px; }
+.ap.compact .ap-sub, .ap.compact .ap-more { width: 16px; height: 16px; min-width: 16px; border-radius: 5px; right: -5px; bottom: -5px; font-size: 10px; }
+.ap.compact .ap-more { width: auto; border-radius: 8px; }
+
+.ap-message { font-size: var(--ap-fs-small); line-height: var(--ap-lh-small); color: var(--ap-muted); }
+.ap-message.error { color: var(--homey-color-red, #F25F5C); }

@@ -21,6 +21,12 @@
       "type": "checkbox",
       "title": { "en": "Show icons", "da": "Vis ikoner" },
       "value": true
+    },
+    {
+      "id": "compact",
+      "type": "checkbox",
+      "title": { "en": "Compact (one line per day)", "da": "Kompakt (én linje pr. dag)" },
+      "value": false
     }
   ],
   "api": {

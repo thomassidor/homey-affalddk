@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+  The widget's store previews (widgets/upcoming/preview-light.png and -dark.png, 1024x1024):
+  abstract like Widgetkeeper's (bars for text, no words), with the real waste type icons.
+  ?theme=dark|light. Rendered by `node scripts/render.mjs previews`.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    html, body { margin: 0; background: transparent; }
+    body { width: 1024px; height: 1024px; display: grid; place-items: center; }
+    .card { width: 800px; padding: 52px 48px; border-radius: 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 52px; }
+    .dark .card { background: #1F2029; box-shadow: 0 24px 60px rgba(0,0,0,.28); --t: #CFD0D4; --m: #6E6F78; --n: #33343F; }
+    .light .card { background: #FFFFFF; box-shadow: 0 24px 60px rgba(20,24,40,.12); --t: #41424B; --m: #A9AAB1; --n: #EDEDF0; }
+    .row { display: grid; grid-template-columns: 112px 1fr auto; column-gap: 40px; align-items: center; }
+    .icon { position: relative; width: 112px; height: 112px; }
+    .icon img { width: 100%; height: 100%; border-radius: 28px; display: block; }
+    .icon .sub { position: absolute; right: -16px; bottom: -16px; width: 60px; height: 60px; border-radius: 18px; }
+    .dark .icon .sub { box-shadow: 0 0 0 6px #1F2029; }
+    .light .icon .sub { box-shadow: 0 0 0 6px #FFFFFF; }
+    .bars { display: flex; flex-direction: column; gap: 22px; }
+    .bar { height: 30px; border-radius: 15px; background: var(--t); }
+    .bar.m { height: 24px; border-radius: 12px; background: var(--m); }
+    .pill { width: 150px; height: 76px; border-radius: 38px; display: grid; place-items: center; }
+    .pill i { display: block; width: 84px; height: 26px; border-radius: 13px; }
+    .pill.today { background: #267700; } .pill.today i { background: #fff; }
+    .pill.tomorrow { background: var(--n); } .pill.tomorrow i { background: var(--t); }
+    .pill.later { background: none; } .pill.later i { background: var(--m); width: 110px; height: 24px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="row"><div class="icon"><img src="../widgets/upcoming/public/icons/restaffaldmadaffald.svg"></div>
+      <div class="bars"><div class="bar" style="width:62%"></div><div class="bar m" style="width:48%"></div></div><div class="pill today"><i></i></div></div>
+    <div class="row"><div class="icon"><img src="../widgets/upcoming/public/icons/farligtaffald.svg"><img class="sub" src="../widgets/upcoming/public/icons/tekstil.svg"></div>
+      <div class="bars"><div class="bar" style="width:78%"></div><div class="bar m" style="width:52%"></div></div><div class="pill tomorrow"><i></i></div></div>
+    <div class="row"><div class="icon"><img src="../widgets/upcoming/public/icons/pappi.svg"></div>
+      <div class="bars"><div class="bar" style="width:56%"></div><div class="bar m" style="width:44%"></div></div><div class="pill later"><i></i></div></div>
+    <div class="row"><div class="icon"><img src="../widgets/upcoming/public/icons/metalglas.svg"></div>
+      <div class="bars"><div class="bar" style="width:42%"></div><div class="bar m" style="width:50%"></div></div><div class="pill later"><i></i></div></div>
+  </div>
+  <script>document.body.className = new URLSearchParams(location.search).get('theme') || 'dark';</script>
+</body>
+</html>

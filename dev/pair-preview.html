@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+  Dev preview of the pairing view inside a reproduction of Homey's pairing sheet
+  (metrics measured by Lightkeeper: 16 px gutter, 56 px header, 14 px radius).
+  Needs http (it fetches the view): python -m http.server 8765, then
+  /dev/pair-preview.html?step=1|2|3  (3 = an address chosen, with its preview).
+  &error=1 shows step 1 with a validation error. Made-up data only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    html, body { margin: 0; padding: 0; background: #eceef2; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { width: 422px; padding: 0; }
+    .sheet { position: relative; background: #fff; border-radius: 14px; overflow: hidden; }
+    .head { height: 56px; display: flex; align-items: center; gap: 12px; padding: 0 22px; box-sizing: border-box; }
+    .head .back { font-size: 17px; color: #9aa0a9; }
+    .head .title { flex: 1; font-size: 15px; font-weight: 500; color: #6a7180; }
+    .head .shut { font-size: 17px; color: #b3b8c0; }
+    .body { padding: 0 16px; }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="head"><span class="back">&#8592;</span><span class="title" id="sheet-title">Affald DK</span><span class="shut">&#10005;</span></div>
+    <div class="body" id="body"></div>
+  </div>
+  <script>
+    var params = new URLSearchParams(location.search);
+    var step = Number(params.get('step') || 1);
+    var lang = params.get('lang') || 'da';
+    var ICON = '../widgets/upcoming/public/icons/';
+    var ADDRESSES = ['Bygaden 3', 'Bygaden 30', 'Bygaden 31', 'Bygaden 32', 'Bygaden 33', 'Bygaden 35', 'Bygaden 36', 'Bygaden 37 A'];
+    var PREVIEW = [
+      { name: 'Farligt affald', when: 'I morgen', date: 'Ons 25/11', soon: true, icon: ICON + 'farligtaffald.svg' },
+      { name: 'Tekstilaffald', when: 'I morgen', date: 'Ons 25/11', soon: true, icon: ICON + 'tekstil.svg' },
+      { name: 'Rest- & madaffald', when: 'Om 7 dage', date: 'Tir 1/12', soon: false, icon: ICON + 'restaffaldmadaffald.svg' },
+      { name: 'Pap, papir & plast', when: 'Om 9 dage', date: 'Tor 3/12', soon: false, icon: ICON + 'pappi.svg' },
+      { name: 'Metal & glas', when: 'Om 17 dage', date: 'Fre 11/12', soon: false, icon: ICON + 'metalglas.svg' },
+    ];
+    fetch('../locales/' + lang + '.json').then(function (r) { return r.json(); }).then(function (strings) {
+      window.Homey = {
+        __: function (key, tokens) {
+          var v = key.split('.').reduce(function (o, k) { return o && o[k]; }, strings);
+          if (typeof v !== 'string') return key;
+          Object.keys(tokens || {}).forEach(function (k) { v = v.split('__' + k + '__').join(String(tokens[k])); });
+          return v;
+        },
+        setTitle: function (t) { document.getElementById('sheet-title').textContent = t; },
+        emit: function (event) {
+          if (event === 'init') return Promise.resolve({ municipalities: ['Roskilde', 'Køge', 'Lejre', 'Greve', 'Solrød'], suggested: 'Roskilde' });
+          if (event === 'search') return new Promise(function (r) { setTimeout(function () { r(ADDRESSES); }, 50); });
+          if (event === 'select') return new Promise(function (r) {
+            setTimeout(function () { r({ name: 'Bygaden 3', data: {}, store: {}, settings: {}, preview: PREVIEW }); }, 50);
+          });
+          return Promise.reject(new Error('no fixture: ' + event));
+        },
+        createDevice: function () { return Promise.resolve(); }, done: function () {}, on: function () {},
+      };
+      return fetch('../drivers/address/pair/address.html').then(function (r) { return r.text(); });
+    }).then(function (html) {
+      var body = document.getElementById('body');
+      body.innerHTML = html;
+      // innerHTML doesn't run scripts: re-create them, as Homey's container does
+      body.querySelectorAll('script').forEach(function (old) {
+        var s = document.createElement('script');
+        s.textContent = old.textContent;
+        old.replaceWith(s);
+      });
+      setTimeout(function () {
+        if (step === 1 && params.get('error')) {
+          document.getElementById('ad-street').value = 'Bygaden';
+          document.getElementById('ad-search').requestSubmit();
+        }
+        if (step >= 2) {
+          document.getElementById('ad-street').value = 'Bygaden';
+          document.getElementById('ad-zip').value = '4040';
+          document.getElementById('ad-search').requestSubmit();
+        }
+        if (step >= 3) {
+          setTimeout(function () { document.querySelector('#ad-list .tile').click(); }, 150);
+        }
+      }, 100);
+    });
+  </script>
+</body>
+</html>

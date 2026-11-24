@@ -1,121 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    :root {
-      --text: var(--homey-text-color, #1a1a1a);
-      --muted: var(--homey-text-color-light, #6b6b6b);
-      --line: var(--homey-line-color, rgba(127, 127, 127, 0.18));
-      --soon: var(--homey-color-green, #2e7d32);
-      --soon-bg: rgba(46, 125, 50, 0.12);
-      --su: var(--homey-su, 4px);
-    }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: transparent; }
-    body {
-      font-family: var(--homey-font-family, -apple-system, system-ui, sans-serif);
-      color: var(--text);
-      font-size: var(--homey-font-size-default, 15px);
-      -webkit-font-smoothing: antialiased;
-    }
-    #root { padding: calc(var(--su) * 3) calc(var(--su) * 4); }
-    .head {
-      font-size: var(--homey-font-size-small, 13px);
-      color: var(--muted);
-      margin-bottom: calc(var(--su) * 2);
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    }
-    .row {
-      display: flex; align-items: center; gap: calc(var(--su) * 3);
-      padding: calc(var(--su) * 2) 0;
-      border-top: 1px solid var(--line);
-    }
-    .row:first-of-type { border-top: 0; }
-    .icons { display: flex; flex: none; }
-    .icons img {
-      width: 32px; height: 32px; border-radius: 8px; background: #fff;
-      margin-left: -10px; box-shadow: 0 0 0 2px var(--homey-background-color, #fff);
-    }
-    .icons img:first-child { margin-left: 0; }
-    .names { flex: 1; min-width: 0; line-height: 1.25; }
-    .names span { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .when { flex: none; text-align: right; line-height: 1.25; }
-    .when b { display: block; font-weight: var(--homey-font-weight-bold, 600); }
-    .when small { color: var(--muted); font-size: var(--homey-font-size-small, 13px); }
-    .row.soon .when b {
-      color: var(--soon); background: var(--soon-bg);
-      padding: 1px 8px; border-radius: 10px; display: inline-block;
-    }
-    .empty { color: var(--muted); padding: calc(var(--su) * 4) 0; text-align: center; }
-  </style>
+  <link rel="stylesheet" href="widget.css">
+  <script src="widget.js"></script>
 </head>
-<body>
-  <div id="root"><div class="empty">…</div></div>
+<body class="homey-widget">
+  <div id="root"></div>
   <script>
-    function el(tag, cls, text) {
-      const e = document.createElement(tag);
-      if (cls) e.className = cls;
-      if (text !== undefined) e.textContent = text;
-      return e;
-    }
-
     function onHomeyReady(Homey) {
-      const settings = Homey.getSettings() || {};
-      const deviceId = settings.device && settings.device.id ? settings.device.id : '';
-      const rows = settings.rows || 3;
-      const showIcons = settings.icons !== false;
-      const root = document.getElementById('root');
-      let readySent = false;
-
-      function render(data) {
-        root.replaceChildren();
-        if (data.name) root.appendChild(el('div', 'head', data.name));
-        if (data.status !== 'ok') {
-          root.appendChild(el('div', 'empty', data.message || ''));
-        } else {
-          for (const p of data.pickups) {
-            const row = el('div', 'row' + (p.daysUntil <= 1 ? ' soon' : ''));
-            if (showIcons) {
-              const icons = el('div', 'icons');
-              for (const f of p.fractions.slice(0, 3)) {
-                const img = el('img');
-                img.src = f.icon;
-                img.alt = '';
-                img.onerror = () => img.remove();
-                icons.appendChild(img);
-              }
-              row.appendChild(icons);
-            }
-            const names = el('div', 'names');
-            for (const f of p.fractions) names.appendChild(el('span', '', f.name));
-            row.appendChild(names);
-            const when = el('div', 'when');
-            when.appendChild(el('b', '', p.when));
-            when.appendChild(el('small', '', p.dateLabel));
-            when.title = p.dateLong;
-            row.appendChild(when);
-            root.appendChild(row);
-          }
-        }
-        const height = Math.ceil(document.body.scrollHeight);
-        if (!readySent) { Homey.ready({ height }); readySent = true; } else { Homey.setHeight(height); }
-      }
-
-      function load() {
-        const q = '/pickups?rows=' + encodeURIComponent(rows) + (deviceId ? '&device=' + encodeURIComponent(deviceId) : '');
-        return Homey.api('GET', q)
-          .then(render)
-          .catch((err) => render({ status: 'error', message: (err && err.message) || String(err), pickups: [] }));
-      }
-
-      load();
-      Homey.on('pickups-updated', (payload) => {
-        if (!deviceId || !payload || payload.deviceId === deviceId) load();
-      });
-      // Day rollover / switch hour even without new data
-      setInterval(load, 15 * 60 * 1000);
+      AffaldPickups.undoTextZoom();
+      AffaldPickups.mount(Homey, { root: document.getElementById('root'), frame: document.body });
     }
   </script>
 </body>

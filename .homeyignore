@@ -4,3 +4,5 @@ README.md
 *.ts
 !*.d.ts
 .gitattributes
+dev/
+.renders/
