@@ -1,0 +1,300 @@
+<title>Affald DK Store Art</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap">
+<style>
+  /* Layout: a review sheet, one band per direction: the artwork large, then at the store's real sizes. */
+  :root {
+    --bg: #f3f5f1;
+    --surface: #ffffff;
+    --fg: #17201a;
+    --muted: #5d6a60;
+    --line: #dde3dc;
+    --accent: #2e7d32;
+    --accent-soft: #e3f0e2;
+    --display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+    --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121612; --surface: #1b211c; --fg: #e7ece6; --muted: #9aa69c; --line: #2c352d;
+      --accent: #7ccf80; --accent-soft: #1f3321; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121612; --surface: #1b211c; --fg: #e7ece6; --muted: #9aa69c; --line: #2c352d;
+    --accent: #7ccf80; --accent-soft: #1f3321; color-scheme: dark;
+  }
+  body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 15px; line-height: 1.55; }
+  .page {
+    max-width: 1120px; margin: 0 auto;
+    padding-block: 40px 72px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    display: flex; flex-direction: column; gap: 56px;
+  }
+  header { display: flex; flex-direction: column; gap: 10px; max-width: 68ch; }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  h1 { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(30px, 5vw, 44px); line-height: 1.05; letter-spacing: -.02em; text-wrap: balance; }
+  h2 { margin: 0; font-family: var(--display); font-weight: 800; font-size: 26px; line-height: 1.15; letter-spacing: -.01em; text-wrap: balance; }
+  p { margin: 0; }
+  .lede { color: var(--muted); font-size: 16px; }
+
+  section.dir { display: flex; flex-direction: column; gap: 18px; }
+  .dir-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+  .tag { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 3px 9px; border-radius: 999px; }
+  .dir-text { color: var(--muted); max-width: 70ch; }
+  .sizes { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 20px; }
+  .size { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .size span { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  /* A stage shows a 1000x700 artboard scaled to its width. */
+  .stage { position: relative; width: 100%; aspect-ratio: 10 / 7; max-width: 100%; overflow: hidden; border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 8px 30px rgba(0,0,0,.08); }
+  .stage.fixed { width: var(--w); }
+  .stage > .art { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+
+  .icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .icon-card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+  .icon-row { display: flex; align-items: center; gap: 14px; }
+  .icon-tile { width: 72px; height: 72px; border-radius: 50%; background: #2e7d32; display: grid; place-items: center; flex: none; }
+  .icon-tile svg { width: 46px; height: 46px; }
+  .icon-plain svg { width: 40px; height: 40px; display: block; }
+  .icon-card b { font-weight: 600; }
+  .icon-card p { color: var(--muted); font-size: 14px; }
+  footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 18px; }
+
+  /* ---------- the artboards (fixed 1000x700, own colours, independent of the page theme) ---------- */
+  .art { width: 1000px; height: 700px; overflow: hidden; font-family: Roboto, "Inter", system-ui, sans-serif; color: #fff; }
+  .art * { box-sizing: border-box; }
+
+  /* the Homey widget card, at 1.5x */
+  .w-card { position: absolute; border-radius: 21px; padding: 24px; display: flex; flex-direction: column; gap: 24px; }
+  .w-card.dark { background: #1F2029; color: #E4E4E7; --muted: #999AA3; --neutral: #2E2F39; box-shadow: 0 30px 60px rgba(0,0,0,.35), 0 6px 14px rgba(0,0,0,.2); }
+  .w-card.light { background: #FFFFFF; color: #1A1B21; --muted: #6B6D76; --neutral: #EDEDF0; box-shadow: 0 30px 60px rgba(9,40,12,.28), 0 6px 14px rgba(9,40,12,.12); }
+  .w-row { display: grid; grid-template-columns: 60px minmax(0,1fr) auto; column-gap: 18px; align-items: center; }
+  .w-ic { position: relative; width: 60px; height: 60px; }
+  .w-ic img { width: 100%; height: 100%; border-radius: 15px; display: block; }
+  .w-ic img.sub { position: absolute; width: 33px; height: 33px; right: -9px; bottom: -9px; border-radius: 10px; box-shadow: 0 0 0 3px var(--card-bg, #1F2029); }
+  .w-card.light .w-ic img.sub { --card-bg: #fff; }
+  .w-name { font-size: 25px; line-height: 36px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .w-date { font-size: 21px; line-height: 30px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .w-when { font-size: 21px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+  .w-row.today .w-when, .w-row.tomorrow .w-when { height: 45px; padding: 0 18px; border-radius: 23px; display: flex; align-items: center; font-weight: 700; }
+  .w-row.today .w-when { background: #267700; color: #fff; }
+  .w-row.tomorrow .w-when { background: var(--neutral); color: inherit; }
+
+  /* A: calendar */
+  .a-cal { background: radial-gradient(120% 90% at 15% 10%, #43A047 0%, #2E7D32 45%, #174a1b 100%); }
+  .cal { position: absolute; left: 64px; top: 82px; width: 450px; background: #fff; border-radius: 34px; padding: 30px 30px 26px; color: #1a1b21; box-shadow: 0 30px 60px rgba(5,30,8,.35); }
+  .cal-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; }
+  .cal-head b { font-size: 30px; font-weight: 700; letter-spacing: -.01em; }
+  .cal-head span { font-size: 22px; color: #8a8c95; }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+  .cal-grid .wd { font-size: 16px; font-weight: 700; color: #a0a2aa; text-align: center; padding-bottom: 4px; }
+  .cal-grid .d { height: 52px; border-radius: 13px; display: grid; place-items: center; font-size: 20px; font-weight: 500; color: #4a4c55; position: relative; }
+  .cal-grid .d.pick { background: none; }
+  .cal-grid .d.pick img { width: 52px; height: 52px; border-radius: 13px; }
+  .cal-grid .d.today { box-shadow: 0 0 0 4px #fff, 0 0 0 7px #267700; border-radius: 15px; }
+  .cal-grid .d.past { color: #c4c6cc; }
+
+  /* B: widgets */
+  .b-wid { background: radial-gradient(90% 80% at 50% 45%, #3a9440 0%, #22642a 50%, #0f3313 100%); }
+
+  /* C: bins */
+  .c-bins { background: linear-gradient(180deg, #e9f4e6 0%, #dcefd8 68%, #c6e2c1 68%, #bddbb7 100%); color: #17311a; }
+  .c-bins .bubble { position: absolute; padding: 0 30px; height: 70px; border-radius: 35px; background: #267700; color: #fff; display: flex; align-items: center; font-size: 30px; font-weight: 700; box-shadow: 0 14px 30px rgba(20,70,25,.3); }
+  .c-bins .bubble::after { content: ''; position: absolute; left: 50%; bottom: -14px; margin-left: -14px; border: 14px solid transparent; border-bottom: 0; border-top-color: #267700; }
+  .c-bins .bubble.soft { background: #fff; color: #1a1b21; font-weight: 500; }
+  .c-bins .bubble.soft::after { border-top-color: #fff; }
+
+  /* D: mosaic */
+  .d-mosaic { background: #164d1a; }
+  .d-mosaic .grid { position: absolute; left: 50%; top: 50%; width: 1500px; display: grid; grid-template-columns: repeat(9, 136px); gap: 24px; transform: translate(-50%, -50%) rotate(-14deg); }
+  .d-mosaic .grid img { width: 136px; height: 136px; border-radius: 32px; display: block; }
+  .d-mosaic .veil { position: absolute; inset: 0; background: radial-gradient(42% 46% at 50% 50%, rgba(22,77,26,.96) 0%, rgba(22,77,26,.82) 45%, rgba(22,77,26,.15) 100%); }
+  .d-mosaic .badge { position: absolute; left: 50%; top: 50%; width: 250px; height: 250px; margin: -125px 0 0 -125px; border-radius: 64px; background: #fff; display: grid; place-items: center; box-shadow: 0 30px 70px rgba(0,0,0,.4); }
+  .d-mosaic .badge svg { width: 160px; height: 160px; }
+  .d-mosaic .badge .pill { position: absolute; right: -40px; top: -22px; height: 56px; padding: 0 22px; border-radius: 28px; background: #267700; color: #fff; font-size: 24px; font-weight: 700; display: flex; align-items: center; box-shadow: 0 10px 24px rgba(0,0,0,.3); }
+
+  /* Export mode (?only=<id>): just the artboard at 1:1, for rendering the PNGs. */
+  body.export { background: transparent; margin: 0; }
+  body.export .page { display: block; padding: 0; max-width: none; }
+  body.export .page > :not(#export) { display: none; }
+</style>
+
+<div class="page">
+  <header>
+    <span class="eyebrow">Homey App Store · app images</span>
+    <h1>Four directions for Affald DK's store art</h1>
+    <p class="lede">The App Store shows these images at 1000×700, 500×350 and 250×175. The small one is in the app list, so each direction is judged there too. Everything uses the app's green and the waste type icons already in the app. All data is made up, and none of it uses the Homey logo, name or device.</p>
+  </header>
+
+  <section class="dir" data-art="calendar">
+    <div class="dir-head"><span class="tag">A</span><h2>Kalender</h2></div>
+    <p class="dir-text">A month calendar where the pickup days are the waste type icons themselves, with the dashboard widget in front. It says what the app knows, and when, in one picture.</p>
+  </section>
+
+  <section class="dir" data-art="widgets">
+    <div class="dir-head"><span class="tag">B</span><h2>Widget</h2></div>
+    <p class="dir-text">The product shot: the dashboard widget in dark and light, large and slightly turned. Closest to what people get, and it matches the widget previews.</p>
+  </section>
+
+  <section class="dir" data-art="bins">
+    <div class="dir-head"><span class="tag">C</span><h2>Spande</h2></div>
+    <p class="dir-text">An illustration: the street's row of bins in their fraction colours, one of them saying it's due tomorrow. The friendliest of the four, and it reads as waste collection even at 250 px.</p>
+  </section>
+
+  <section class="dir" data-art="mosaic">
+    <div class="dir-head"><span class="tag">D</span><h2>Mosaik</h2></div>
+    <p class="dir-text">A tilted wall of every waste type icon around the app's mark. Bold and colourful in the app list, with the least detail to get lost when it's small.</p>
+  </section>
+
+  <section class="dir">
+    <div class="dir-head"><span class="tag">Icon</span><h2>App icon options</h2></div>
+    <p class="dir-text">Homey tints the app icon itself. These show the glyph on the app's colour, as the store and the app list do.</p>
+    <div class="icons" id="icons"></div>
+  </section>
+
+  <footer>Pick a direction and an icon, and say what to change. The chosen artboard is rendered straight from this page to the three PNGs.</footer>
+  <div id="export"></div>
+</div>
+
+<script>
+/*ICONS*/
+(function () {
+  var I = function (k) { return ICONS[k] || ''; };
+
+  var GLYPHS = {
+    bin: '<path d="M250 300h460"/><path d="M400 300v-60a30 30 0 0 1 30-30h100a30 30 0 0 1 30 30v60"/><path d="M290 300l36 420a40 40 0 0 0 40 36h228a40 40 0 0 0 40-36l36-420"/><path d="M480 420v220"/><path d="M390 420l12 220"/><path d="M570 420l-12 220"/>',
+    wheelie: '<path d="M220 300h470a30 30 0 0 1 30 30v10"/><path d="M220 300v-40a40 40 0 0 1 40-40h360"/><path d="M262 340l36 390a30 30 0 0 0 30 27h284a30 30 0 0 0 30-27l36-390"/><path d="M370 470h220"/><circle cx="330" cy="770" r="52"/>',
+    calcheck: '<rect x="210" y="250" width="540" height="520" rx="60"/><path d="M210 390h540"/><path d="M360 180v130M600 180v130"/><path d="M370 580l80 80 150-160"/>',
+  };
+  function glyph(name, color) {
+    return '<svg viewBox="0 0 960 960" fill="none" stroke="' + color + '" stroke-width="48" stroke-linecap="round" stroke-linejoin="round">' + GLYPHS[name] + '</svg>';
+  }
+
+  function card(theme, x, y, w, rows, rot) {
+    var h = '<div class="w-card ' + theme + '" style="left:' + x + 'px;top:' + y + 'px;width:' + w + 'px;' + (rot ? 'transform:rotate(' + rot + 'deg);' : '') + '">';
+    rows.forEach(function (r) {
+      h += '<div class="w-row ' + (r.cls || '') + '"><div class="w-ic"><img src="' + I(r.icon) + '">' + (r.sub ? '<img class="sub" src="' + I(r.sub) + '">' : '') + '</div>'
+        + '<div style="min-width:0"><div class="w-name">' + r.name + '</div><div class="w-date">' + r.date + '</div></div>'
+        + '<div class="w-when">' + r.when + '</div></div>';
+    });
+    return h + '</div>';
+  }
+
+  var ROWS = [
+    { icon: 'restaffaldmadaffald', name: 'Rest- & madaffald', date: 'Tirsdag 24/11', when: 'I dag', cls: 'today' },
+    { icon: 'farligtaffald', sub: 'tekstil', name: 'Farligt affald, Tekstil', date: 'Onsdag 25/11', when: 'I morgen', cls: 'tomorrow' },
+    { icon: 'pappi', name: 'Pap, papir & plast', date: 'Torsdag 3/12', when: 'Om 9 dage' },
+    { icon: 'metalglas', name: 'Metal & glas', date: 'Fredag 11/12', when: 'Om 17 dage' },
+  ];
+
+  function wheelieBin(x, body, lid, icon, scale, tilt) {
+    var s = scale || 1;
+    return '<svg style="position:absolute;left:' + x + 'px;bottom:' + (120) + 'px;overflow:visible" width="' + 230 * s + '" height="' + 360 * s + '" viewBox="0 0 230 360">'
+      + '<g transform="rotate(' + (tilt || 0) + ' 115 340)">'
+      + '<ellipse cx="115" cy="352" rx="118" ry="14" fill="rgba(20,60,25,.22)"/>'
+      + '<path d="M22 52 L40 318 Q42 334 58 334 L172 334 Q188 334 190 318 L208 52 Z" fill="' + body + '"/>'
+      + '<path d="M22 52 L208 52 L205 92 L25 92 Z" fill="rgba(0,0,0,.12)"/>'
+      + '<rect x="8" y="22" width="214" height="38" rx="12" fill="' + lid + '"/>'
+      + '<rect x="70" y="8" width="90" height="20" rx="8" fill="' + lid + '"/>'
+      + '<rect x="72" y="126" width="86" height="86" rx="20" fill="#fff"/>'
+      + '<image href="' + I(icon) + '" x="79" y="133" width="72" height="72"/>'
+      + '<circle cx="64" cy="336" r="24" fill="#222"/><circle cx="64" cy="336" r="9" fill="#666"/>'
+      + '<circle cx="166" cy="336" r="24" fill="#222"/><circle cx="166" cy="336" r="9" fill="#666"/>'
+      + '</g></svg>';
+  }
+
+  var ART = {
+    calendar: function () {
+      var picks = { 3: 'restaffaldmadaffald', 10: 'pappi', 11: 'metalglas', 17: 'restaffaldmadaffald', 24: 'restaffaldmadaffald', 25: 'farligtaffald', 26: 'plastmadkarton' };
+      var g = '<div class="cal"><div class="cal-head"><b>November</b><span>2026</span></div><div class="cal-grid">';
+      ['M', 'T', 'O', 'T', 'F', 'L', 'S'].forEach(function (d) { g += '<div class="wd">' + d + '</div>'; });
+      for (var i = 0; i < 6; i++) g += '<div></div>';
+      for (var d = 1; d <= 30; d++) {
+        var cls = 'd' + (picks[d] ? ' pick' : '') + (d === 24 ? ' today' : '') + (d < 24 && !picks[d] ? ' past' : '');
+        g += '<div class="' + cls + '">' + (picks[d] ? '<img src="' + I(picks[d]) + '">' : d) + '</div>';
+      }
+      g += '</div></div>';
+      return '<div class="art a-cal">' + g + card('dark', 548, 250, 400, ROWS.slice(0, 3)) + '</div>';
+    },
+    widgets: function () {
+      return '<div class="art b-wid">'
+        + card('light', 500, 46, 440, ROWS, 5)
+        + card('dark', 70, 196, 480, ROWS, -4)
+        + '</div>';
+    },
+    bins: function () {
+      return '<div class="art c-bins">'
+        + wheelieBin(80, '#2b2b2b', '#31ae52', 'restaffaldmadaffald', 1, -2)
+        + wheelieBin(310, '#3983c5', '#2f6ea6', 'papir', 1, 1)
+        + wheelieBin(540, '#961e82', '#7b166a', 'plastmadkarton', 1, -1)
+        + wheelieBin(770, '#3db586', '#2f9a71', 'metalglas', 0.92, 2)
+        + '<div class="bubble" style="left:318px;top:96px">I morgen</div>'
+        + '<div class="bubble soft" style="left:552px;top:120px">Om 9 dage</div>'
+        + '</div>';
+    },
+    mosaic: function () {
+      var keys = ['restaffaldmadaffald', 'pappi', 'metalglas', 'farligtaffald', 'tekstil', 'papir', 'pap', 'glas', 'plastmadkarton', 'madaffald', 'restaffald', 'haveaffald', 'storskrald', 'plast', 'batterier', 'elektronik', 'pappapir', 'plastmetal'];
+      var g = '<div class="grid">';
+      for (var i = 0; i < 63; i++) g += '<img src="' + I(keys[(i * 7 + Math.floor(i / 9) * 3) % keys.length]) + '">';
+      g += '</div>';
+      return '<div class="art d-mosaic">' + g + '<div class="veil"></div><div class="badge">' + glyph('bin', '#2e7d32') + '<span class="pill">I morgen</span></div></div>';
+    },
+  };
+
+  // ?only=<id> (or #only-<id>): one artboard at 1:1, for the PNG export.
+  var params = new URLSearchParams(location.search);
+  var only = params.get('only') || (location.hash.indexOf('#only-') === 0 ? location.hash.slice(6) : '');
+  if (only && ART[only]) {
+    document.body.classList.add('export');
+    document.getElementById('export').innerHTML = ART[only]();
+    return;
+  }
+
+  function stage(id, fixedWidth) {
+    var st = document.createElement('div');
+    st.className = 'stage' + (fixedWidth ? ' fixed' : '');
+    if (fixedWidth) st.style.setProperty('--w', fixedWidth + 'px');
+    st.innerHTML = ART[id]();
+    var art = st.firstChild;
+    function fit() { art.style.transform = 'scale(' + (st.clientWidth / 1000) + ')'; }
+    if (window.ResizeObserver) new ResizeObserver(fit).observe(st);
+    requestAnimationFrame(fit);
+    return st;
+  }
+
+  document.querySelectorAll('section.dir[data-art]').forEach(function (sec) {
+    var id = sec.getAttribute('data-art');
+    sec.appendChild(stage(id));
+    var sizes = document.createElement('div');
+    sizes.className = 'sizes';
+    [[500, '500 × 350 · store page'], [250, '250 × 175 · app list']].forEach(function (s) {
+      var wrap = document.createElement('div');
+      wrap.className = 'size';
+      wrap.appendChild(stage(id, s[0]));
+      var label = document.createElement('span');
+      label.textContent = s[1];
+      wrap.appendChild(label);
+      sizes.appendChild(wrap);
+    });
+    sec.appendChild(sizes);
+  });
+
+  var ICON_OPTIONS = [
+    ['bin', 'Spand', 'The current icon: a plain bin. Clear, but generic.'],
+    ['wheelie', 'Skraldespand', 'A wheelie bin, the one Danish households actually have.'],
+    ['calcheck', 'Tømmedag', 'A calendar with a tick: what the app is about, pickup days.'],
+  ];
+  var box = document.getElementById('icons');
+  ICON_OPTIONS.forEach(function (o) {
+    var c = document.createElement('div');
+    c.className = 'icon-card';
+    c.innerHTML = '<div class="icon-row"><div class="icon-tile">' + glyph(o[0], '#ffffff') + '</div><div class="icon-plain">' + glyph(o[0], 'currentColor') + '</div></div>'
+      + '<b>' + o[1] + '</b><p>' + o[2] + '</p>';
+    box.appendChild(c);
+  });
+})();
+</script>

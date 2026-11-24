@@ -36,6 +36,9 @@ const SHOTS = {
   widget: [
     ['widget-all', '/dev/preview.html', 1300, 900],
   ],
+  review: [
+    ['store-art', '/dev/store-art.html', 1200, 3800],
+  ],
   // the store previews: written into the widget folder at 1x, transparent
   previews: [
     ['../widgets/upcoming/preview-dark', '/dev/widget-previews.html?theme=dark', 1024, 1024, 1],
