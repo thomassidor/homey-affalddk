@@ -1,8 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none" stroke="#000" stroke-width="44" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M250 300h460"/>
-  <path d="M400 300v-60a30 30 0 0 1 30-30h100a30 30 0 0 1 30 30v60"/>
-  <path d="M290 300l36 420a40 40 0 0 0 40 36h228a40 40 0 0 0 40-36l36-420"/>
-  <path d="M480 420v220"/>
-  <path d="M390 420l12 220"/>
-  <path d="M570 420l-12 220"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none" stroke="#000" stroke-width="48" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M220 300h470a30 30 0 0 1 30 30v10"/>
+  <path d="M220 300v-40a40 40 0 0 1 40-40h360"/>
+  <path d="M262 340l36 390a30 30 0 0 0 30 27h284a30 30 0 0 0 30-27l36-390"/>
+  <path d="M370 470h220"/>
+  <circle cx="330" cy="770" r="52"/>
 </svg>

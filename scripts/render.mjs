@@ -39,6 +39,10 @@ const SHOTS = {
   review: [
     ['store-art', '/dev/store-art.html', 1200, 3800],
   ],
+  // the App Store image (direction D, Mosaik), 1:1; scripts/store-images.mjs makes the smaller sizes
+  store: [
+    ['../assets/images/xlarge', '/dev/store-art.html?only=mosaic', 1000, 700, 1],
+  ],
   // the store previews: written into the widget folder at 1x, transparent
   previews: [
     ['../widgets/upcoming/preview-dark', '/dev/widget-previews.html?theme=dark', 1024, 1024, 1],
