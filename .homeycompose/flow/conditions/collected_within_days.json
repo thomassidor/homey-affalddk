@@ -1,0 +1,13 @@
+{
+  "title": { "en": "Waste type !{{is|is not}} collected within … days", "da": "Affaldstype !{{tømmes|tømmes ikke}} inden for … dage" },
+  "titleFormatted": {
+    "en": "[[fraction]] !{{is|is not}} collected within [[days]] days",
+    "da": "[[fraction]] !{{tømmes|tømmes ikke}} inden for [[days]] dage"
+  },
+  "hint": { "en": "0 days = today only, 1 = today or tomorrow.", "da": "0 dage = kun i dag, 1 = i dag eller i morgen." },
+  "args": [
+    { "type": "device", "name": "device", "filter": "driver_id=address" },
+    { "type": "autocomplete", "name": "fraction", "title": { "en": "Waste type", "da": "Affaldstype" } },
+    { "type": "number", "name": "days", "title": { "en": "Days", "da": "Dage" }, "min": 0, "max": 60, "step": 1 }
+  ]
+}

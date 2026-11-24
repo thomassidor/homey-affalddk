@@ -1,0 +1,28 @@
+{
+  "title": { "en": "Pickup reminder", "da": "Påmindelse om tømning" },
+  "titleFormatted": {
+    "en": "At [[time]], when [[fraction]] is collected in [[days]] days",
+    "da": "Kl. [[time]], når [[fraction]] tømmes om [[days]] dage"
+  },
+  "hint": {
+    "en": "Fires at the chosen time on the days before a pickup. Use 1 day for \"tomorrow\" and 0 days for \"today\".",
+    "da": "Udløses på det valgte klokkeslæt dagene før en tømning. Brug 1 dag for \"i morgen\" og 0 dage for \"i dag\"."
+  },
+  "args": [
+    { "type": "device", "name": "device", "filter": "driver_id=address" },
+    { "type": "time", "name": "time", "title": { "en": "Time", "da": "Klokkeslæt" } },
+    {
+      "type": "autocomplete",
+      "name": "fraction",
+      "title": { "en": "Waste type", "da": "Affaldstype" },
+      "placeholder": { "en": "Any waste type", "da": "Enhver affaldstype" }
+    },
+    { "type": "number", "name": "days", "title": { "en": "Days", "da": "Dage" }, "min": 0, "max": 30, "step": 1, "placeholder": { "en": "1", "da": "1" } }
+  ],
+  "tokens": [
+    { "name": "fractions", "type": "string", "title": { "en": "Waste types", "da": "Affaldstyper" }, "example": { "en": "Residual waste, Paper", "da": "Restaffald, Papir" } },
+    { "name": "date", "type": "string", "title": { "en": "Date", "da": "Dato" }, "example": { "en": "Thursday 27 November", "da": "torsdag d. 27. november" } },
+    { "name": "days", "type": "number", "title": { "en": "Days until", "da": "Dage til" }, "example": 1 },
+    { "name": "description", "type": "string", "title": { "en": "Description", "da": "Beskrivelse" }, "example": { "en": "Restaffald 240 l", "da": "Restaffald 240 l" } }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "errors": {
+    "not_supported": "Kommunens affaldssystem svarer ikke, eller understøttes ikke længere",
+    "address_not_found": "Adressen blev ikke fundet hos kommunens affaldsleverandør",
+    "no_connection": "Kunne ikke kontakte affaldsleverandøren – prøver igen senere",
+    "unknown": "Fejl: __message__"
+  },
+  "pair": {
+    "title": "Find din adresse",
+    "intro": "Tømmedagene hentes fra din kommunes affaldssystem.",
+    "municipality": "Kommune",
+    "zipcode": "Postnummer",
+    "street": "Vejnavn",
+    "house_number": "Husnr. (valgfrit)",
+    "search": "Søg",
+    "searching": "Søger…",
+    "results": "Vælg din adresse",
+    "add": "Tilføj adresse",
+    "adding": "Henter tømmedage…",
+    "preview": "Kommende tømninger",
+    "back": "Tilbage",
+    "unknown_municipality": "Vælg en kommune fra listen",
+    "missing_fields": "Udfyld postnummer og vejnavn",
+    "search_first": "Søg efter en adresse først",
+    "already_added": "Denne adresse er allerede tilføjet",
+    "no_pickups": "Affaldsleverandøren returnerede ingen kommende tømninger for adressen",
+    "unsupported_note": "Er din kommune ikke på listen? Nogle kommuner (f.eks. dem der kun bruger RenoWeb med MitID) kan ikke understøttes."
+  },
+  "flow": {
+    "any_fraction": "Enhver affaldstype"
+  },
+  "widget": {
+    "no_device": "Vælg en adresse i widgettens indstillinger",
+    "no_pickups": "Ingen kommende tømninger",
+    "unavailable": "Tømningsdata er ikke tilgængelige"
+  }
+}

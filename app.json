@@ -1,0 +1,533 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "dk.affald",
+  "version": "1.0.0",
+  "compatibility": ">=12.2.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Affald DK",
+    "da": "Affald DK"
+  },
+  "description": {
+    "en": "Know when your bins are emptied – waste pickup days for Danish municipalities",
+    "da": "Hold styr på hvornår skraldet hentes – tømmedage for danske kommuner"
+  },
+  "category": [
+    "tools"
+  ],
+  "permissions": [],
+  "brandColor": "#2E7D32",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Thomas Sidor"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Bjarne Riis (briis/affalddk, original Home Assistant integration)"
+      },
+      {
+        "name": "TermeHansen (pyaffalddk)"
+      }
+    ]
+  },
+  "source": "https://github.com/thomassidor/homey-affalddk",
+  "support": "https://github.com/thomassidor/homey-affalddk/issues",
+  "tags": {
+    "en": [
+      "waste",
+      "garbage",
+      "trash",
+      "recycling",
+      "pickup",
+      "Denmark"
+    ],
+    "da": [
+      "affald",
+      "skrald",
+      "tømning",
+      "genbrug",
+      "renovation",
+      "kommune"
+    ]
+  },
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Next pickup changed",
+          "da": "Næste tømning ændrede sig"
+        },
+        "hint": {
+          "en": "Fires when the next pickup moves to a new date or new waste types.",
+          "da": "Udløses når næste tømning skifter til en ny dato eller nye affaldstyper."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=address"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "fractions",
+            "type": "string",
+            "title": {
+              "en": "Waste types",
+              "da": "Affaldstyper"
+            },
+            "example": {
+              "en": "Residual waste, Paper",
+              "da": "Restaffald, Papir"
+            }
+          },
+          {
+            "name": "date",
+            "type": "string",
+            "title": {
+              "en": "Date",
+              "da": "Dato"
+            },
+            "example": {
+              "en": "Thursday 27 November",
+              "da": "torsdag d. 27. november"
+            }
+          },
+          {
+            "name": "days",
+            "type": "number",
+            "title": {
+              "en": "Days until",
+              "da": "Dage til"
+            },
+            "example": 3
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "title": {
+              "en": "Description",
+              "da": "Beskrivelse"
+            },
+            "example": {
+              "en": "Restaffald 240 l",
+              "da": "Restaffald 240 l"
+            }
+          }
+        ],
+        "id": "next_pickup_changed"
+      },
+      {
+        "title": {
+          "en": "Pickup reminder",
+          "da": "Påmindelse om tømning"
+        },
+        "titleFormatted": {
+          "en": "At [[time]], when [[fraction]] is collected in [[days]] days",
+          "da": "Kl. [[time]], når [[fraction]] tømmes om [[days]] dage"
+        },
+        "hint": {
+          "en": "Fires at the chosen time on the days before a pickup. Use 1 day for \"tomorrow\" and 0 days for \"today\".",
+          "da": "Udløses på det valgte klokkeslæt dagene før en tømning. Brug 1 dag for \"i morgen\" og 0 dage for \"i dag\"."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=address"
+          },
+          {
+            "type": "time",
+            "name": "time",
+            "title": {
+              "en": "Time",
+              "da": "Klokkeslæt"
+            }
+          },
+          {
+            "type": "autocomplete",
+            "name": "fraction",
+            "title": {
+              "en": "Waste type",
+              "da": "Affaldstype"
+            },
+            "placeholder": {
+              "en": "Any waste type",
+              "da": "Enhver affaldstype"
+            }
+          },
+          {
+            "type": "number",
+            "name": "days",
+            "title": {
+              "en": "Days",
+              "da": "Dage"
+            },
+            "min": 0,
+            "max": 30,
+            "step": 1,
+            "placeholder": {
+              "en": "1",
+              "da": "1"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "fractions",
+            "type": "string",
+            "title": {
+              "en": "Waste types",
+              "da": "Affaldstyper"
+            },
+            "example": {
+              "en": "Residual waste, Paper",
+              "da": "Restaffald, Papir"
+            }
+          },
+          {
+            "name": "date",
+            "type": "string",
+            "title": {
+              "en": "Date",
+              "da": "Dato"
+            },
+            "example": {
+              "en": "Thursday 27 November",
+              "da": "torsdag d. 27. november"
+            }
+          },
+          {
+            "name": "days",
+            "type": "number",
+            "title": {
+              "en": "Days until",
+              "da": "Dage til"
+            },
+            "example": 1
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "title": {
+              "en": "Description",
+              "da": "Beskrivelse"
+            },
+            "example": {
+              "en": "Restaffald 240 l",
+              "da": "Restaffald 240 l"
+            }
+          }
+        ],
+        "id": "pickup_reminder"
+      }
+    ],
+    "conditions": [
+      {
+        "title": {
+          "en": "Waste type !{{is|is not}} collected in exactly … days",
+          "da": "Affaldstype !{{tømmes|tømmes ikke}} om præcis … dage"
+        },
+        "titleFormatted": {
+          "en": "[[fraction]] !{{is|is not}} collected in [[days]] days",
+          "da": "[[fraction]] !{{tømmes|tømmes ikke}} om [[days]] dage"
+        },
+        "hint": {
+          "en": "0 days = today, 1 day = tomorrow.",
+          "da": "0 dage = i dag, 1 dag = i morgen."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=address"
+          },
+          {
+            "type": "autocomplete",
+            "name": "fraction",
+            "title": {
+              "en": "Waste type",
+              "da": "Affaldstype"
+            }
+          },
+          {
+            "type": "number",
+            "name": "days",
+            "title": {
+              "en": "Days",
+              "da": "Dage"
+            },
+            "min": 0,
+            "max": 60,
+            "step": 1
+          }
+        ],
+        "id": "collected_in_days"
+      },
+      {
+        "title": {
+          "en": "Waste type !{{is|is not}} collected within … days",
+          "da": "Affaldstype !{{tømmes|tømmes ikke}} inden for … dage"
+        },
+        "titleFormatted": {
+          "en": "[[fraction]] !{{is|is not}} collected within [[days]] days",
+          "da": "[[fraction]] !{{tømmes|tømmes ikke}} inden for [[days]] dage"
+        },
+        "hint": {
+          "en": "0 days = today only, 1 = today or tomorrow.",
+          "da": "0 dage = kun i dag, 1 = i dag eller i morgen."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=address"
+          },
+          {
+            "type": "autocomplete",
+            "name": "fraction",
+            "title": {
+              "en": "Waste type",
+              "da": "Affaldstype"
+            }
+          },
+          {
+            "type": "number",
+            "name": "days",
+            "title": {
+              "en": "Days",
+              "da": "Dage"
+            },
+            "min": 0,
+            "max": 60,
+            "step": 1
+          }
+        ],
+        "id": "collected_within_days"
+      }
+    ],
+    "actions": [
+      {
+        "title": {
+          "en": "Refresh pickup data",
+          "da": "Opdater tømningsdata"
+        },
+        "hint": {
+          "en": "Data is refreshed automatically once a day.",
+          "da": "Data opdateres automatisk én gang i døgnet."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=address"
+          }
+        ],
+        "id": "refresh"
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Address",
+        "da": "Adresse"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "next_pickup_type",
+        "next_pickup_date",
+        "days_until.next_pickup"
+      ],
+      "capabilitiesOptions": {
+        "days_until.next_pickup": {
+          "title": {
+            "en": "Next pickup",
+            "da": "Næste tømning"
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/address/assets/images/small.png",
+        "large": "/drivers/address/assets/images/large.png",
+        "xlarge": "/drivers/address/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "address"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Address",
+            "da": "Adresse"
+          },
+          "children": [
+            {
+              "id": "municipality_label",
+              "type": "label",
+              "label": {
+                "en": "Municipality",
+                "da": "Kommune"
+              },
+              "value": ""
+            },
+            {
+              "id": "address_label",
+              "type": "label",
+              "label": {
+                "en": "Address",
+                "da": "Adresse"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Next pickup",
+            "da": "Næste tømning"
+          },
+          "children": [
+            {
+              "id": "switch_hour",
+              "type": "number",
+              "label": {
+                "en": "Switch to the following pickup at (hour)",
+                "da": "Skift til næste tømning kl."
+              },
+              "hint": {
+                "en": "After this hour on a pickup day, \"Next pickup\" shows the following pickup instead of today's.",
+                "da": "Efter dette klokkeslæt på en tømningsdag viser \"Næste tømning\" den følgende tømning i stedet for dagens."
+              },
+              "value": 15,
+              "min": 0,
+              "max": 23,
+              "step": 1
+            },
+            {
+              "id": "dynamic_icon",
+              "type": "checkbox",
+              "label": {
+                "en": "Show waste type icon for next pickup",
+                "da": "Vis affaldstypens ikon for næste tømning"
+              },
+              "hint": {
+                "en": "Used by the dashboard widget. Otherwise a generic recycling icon is shown.",
+                "da": "Bruges af dashboard-widgetten. Ellers vises et generelt genbrugsikon."
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "id": "address"
+    }
+  ],
+  "widgets": {
+    "upcoming": {
+      "name": {
+        "en": "Waste pickups",
+        "da": "Affaldstømning"
+      },
+      "height": 160,
+      "transparent": false,
+      "settings": [
+        {
+          "id": "device",
+          "type": "autocomplete",
+          "title": {
+            "en": "Address",
+            "da": "Adresse"
+          }
+        },
+        {
+          "id": "rows",
+          "type": "number",
+          "title": {
+            "en": "Number of pickup days",
+            "da": "Antal tømmedage"
+          },
+          "value": 3,
+          "min": 1,
+          "max": 10
+        },
+        {
+          "id": "icons",
+          "type": "checkbox",
+          "title": {
+            "en": "Show icons",
+            "da": "Vis ikoner"
+          },
+          "value": true
+        }
+      ],
+      "api": {
+        "getPickups": {
+          "method": "GET",
+          "path": "/pickups"
+        }
+      },
+      "id": "upcoming"
+    }
+  },
+  "capabilities": {
+    "days_until": {
+      "type": "number",
+      "title": {
+        "en": "Days until pickup",
+        "da": "Dage til tømning"
+      },
+      "units": {
+        "en": "days",
+        "da": "dage"
+      },
+      "decimals": 0,
+      "min": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/capability-days.svg"
+    },
+    "next_pickup_date": {
+      "type": "string",
+      "title": {
+        "en": "Next pickup date",
+        "da": "Næste tømningsdag"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capability-calendar.svg"
+    },
+    "next_pickup_type": {
+      "type": "string",
+      "title": {
+        "en": "Next pickup",
+        "da": "Næste tømning"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capability-bin.svg"
+    }
+  }
+}

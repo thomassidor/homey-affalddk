@@ -24,8 +24,8 @@
       { "name": "TermeHansen (pyaffalddk)" }
     ]
   },
-  "source": "https://github.com/briis/affalddk",
-  "support": "https://github.com/briis/affalddk/issues",
+  "source": "https://github.com/thomassidor/homey-affalddk",
+  "support": "https://github.com/thomassidor/homey-affalddk/issues",
   "tags": {
     "en": ["waste", "garbage", "trash", "recycling", "pickup", "Denmark"],
     "da": ["affald", "skrald", "tømning", "genbrug", "renovation", "kommune"]

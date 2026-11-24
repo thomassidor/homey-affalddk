@@ -1,0 +1,12 @@
+{
+  "type": "number",
+  "title": { "en": "Days until pickup", "da": "Dage til tømning" },
+  "units": { "en": "days", "da": "dage" },
+  "decimals": 0,
+  "min": 0,
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "uiComponent": "sensor",
+  "icon": "/assets/capability-days.svg"
+}

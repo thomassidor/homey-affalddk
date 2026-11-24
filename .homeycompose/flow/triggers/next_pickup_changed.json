@@ -1,0 +1,16 @@
+{
+  "title": { "en": "Next pickup changed", "da": "Næste tømning ændrede sig" },
+  "hint": {
+    "en": "Fires when the next pickup moves to a new date or new waste types.",
+    "da": "Udløses når næste tømning skifter til en ny dato eller nye affaldstyper."
+  },
+  "args": [
+    { "type": "device", "name": "device", "filter": "driver_id=address" }
+  ],
+  "tokens": [
+    { "name": "fractions", "type": "string", "title": { "en": "Waste types", "da": "Affaldstyper" }, "example": { "en": "Residual waste, Paper", "da": "Restaffald, Papir" } },
+    { "name": "date", "type": "string", "title": { "en": "Date", "da": "Dato" }, "example": { "en": "Thursday 27 November", "da": "torsdag d. 27. november" } },
+    { "name": "days", "type": "number", "title": { "en": "Days until", "da": "Dage til" }, "example": 3 },
+    { "name": "description", "type": "string", "title": { "en": "Description", "da": "Beskrivelse" }, "example": { "en": "Restaffald 240 l", "da": "Restaffald 240 l" } }
+  ]
+}

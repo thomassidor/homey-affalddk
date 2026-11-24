@@ -1,0 +1,37 @@
+{
+  "errors": {
+    "not_supported": "The municipality's waste system does not answer, or is no longer supported",
+    "address_not_found": "Address not found at the municipality's waste provider",
+    "no_connection": "Could not reach the waste provider – retrying later",
+    "unknown": "Error: __message__"
+  },
+  "pair": {
+    "title": "Find your address",
+    "intro": "Pickup days are fetched from your municipality's waste system.",
+    "municipality": "Municipality",
+    "zipcode": "Postcode",
+    "street": "Street",
+    "house_number": "House no. (optional)",
+    "search": "Search",
+    "searching": "Searching…",
+    "results": "Choose your address",
+    "add": "Add address",
+    "adding": "Fetching pickup days…",
+    "preview": "Upcoming pickups",
+    "back": "Back",
+    "unknown_municipality": "Choose a municipality from the list",
+    "missing_fields": "Enter postcode and street",
+    "search_first": "Search for an address first",
+    "already_added": "This address has already been added",
+    "no_pickups": "The waste provider returned no upcoming pickups for this address",
+    "unsupported_note": "Not on the list? Some municipalities (e.g. those only on RenoWeb with MitID) cannot be supported."
+  },
+  "flow": {
+    "any_fraction": "Any waste type"
+  },
+  "widget": {
+    "no_device": "Choose an address in the widget settings",
+    "no_pickups": "No upcoming pickups",
+    "unavailable": "Pickup data unavailable"
+  }
+}

@@ -58,12 +58,12 @@ def main(src: Path) -> None:
     tests = src / 'tests'
     dump(OUT_FIX / 'const_tests.json', literals(tests / 'data' / 'const_tests.py'))
     for f in (tests / 'data').iterdir():
-        if f.suffix in ('.data', '.pdf', '.json'):
+        if f.suffix in ('.data', '.pdf', '.json') and f.name != 'vestfor.data':  # vestfor.data is a pickle
             OUT_FIX.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(f, OUT_FIX / f.name)
     print('copied fixtures')
 
-    img_out = ROOT / 'assets' / 'fractions'
+    img_out = ROOT / 'widgets' / 'upcoming' / 'public' / 'icons'
     img_out.mkdir(parents=True, exist_ok=True)
     for f in (comp / 'images').glob('*.svg'):
         shutil.copyfile(f, img_out / f.name)

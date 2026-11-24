@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "title": { "en": "Next pickup date", "da": "Næste tømningsdag" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capability-calendar.svg"
+}

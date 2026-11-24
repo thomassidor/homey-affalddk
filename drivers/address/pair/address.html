@@ -1,0 +1,160 @@
+<style>
+  .affald-intro { margin-bottom: 1em; color: var(--homey-color-mono-600, #666); }
+  .affald-error { color: var(--homey-color-red, #d32f2f); margin: .75em 0; min-height: 1.2em; }
+  .affald-note { font-size: .85em; color: var(--homey-color-mono-500, #888); margin-top: 1em; }
+  .affald-results { list-style: none; padding: 0; margin: .5em 0 1em; max-height: 45vh; overflow-y: auto; }
+  .affald-results li { margin: 0; }
+  .affald-results label {
+    display: flex; gap: .6em; align-items: center; padding: .65em .25em;
+    border-bottom: 1px solid var(--homey-color-mono-100, #eee); cursor: pointer;
+  }
+  .affald-preview { margin: .5em 0 1em; padding: 0; list-style: none; }
+  .affald-preview li { display: flex; justify-content: space-between; padding: .3em 0; }
+  .affald-row { display: flex; gap: .75em; }
+  .affald-row > * { flex: 1; }
+  .affald-hidden { display: none; }
+</style>
+
+<div id="step-search">
+  <p class="affald-intro" data-i18n="pair.intro"></p>
+  <form id="search-form" class="homey-form">
+    <div class="homey-form-group">
+      <label class="homey-form-label" for="municipality" data-i18n="pair.municipality"></label>
+      <select class="homey-form-select" id="municipality" required></select>
+    </div>
+    <div class="affald-row">
+      <div class="homey-form-group">
+        <label class="homey-form-label" for="zipcode" data-i18n="pair.zipcode"></label>
+        <input class="homey-form-input" id="zipcode" inputmode="numeric" maxlength="4" required>
+      </div>
+      <div class="homey-form-group">
+        <label class="homey-form-label" for="house" data-i18n="pair.house_number"></label>
+        <input class="homey-form-input" id="house">
+      </div>
+    </div>
+    <div class="homey-form-group">
+      <label class="homey-form-label" for="street" data-i18n="pair.street"></label>
+      <input class="homey-form-input" id="street" required>
+    </div>
+    <div class="affald-error" id="search-error"></div>
+    <button type="submit" class="homey-button-primary-full" id="search-btn" data-i18n="pair.search"></button>
+    <p class="affald-note" data-i18n="pair.unsupported_note"></p>
+  </form>
+</div>
+
+<div id="step-select" class="affald-hidden">
+  <p class="homey-form-label" data-i18n="pair.results"></p>
+  <ul class="affald-results" id="results"></ul>
+  <div id="preview-wrap" class="affald-hidden">
+    <p class="homey-form-label" data-i18n="pair.preview"></p>
+    <ul class="affald-preview" id="preview"></ul>
+  </div>
+  <div class="affald-error" id="select-error"></div>
+  <button class="homey-button-primary-full" id="add-btn" data-i18n="pair.add" disabled></button>
+  <p><button class="homey-button-transparent" id="back-btn" data-i18n="pair.back"></button></p>
+</div>
+
+<script type="application/javascript">
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const t = (k) => Homey.__(k);
+  document.querySelectorAll('[data-i18n]').forEach((n) => { n.textContent = t(n.dataset.i18n); });
+  Homey.setTitle(t('pair.title'));
+
+  let candidate = null;
+
+  Homey.emit('init').then(({ municipalities, suggested }) => {
+    const sel = $('municipality');
+    sel.replaceChildren();
+    for (const name of municipalities) {
+      const o = document.createElement('option');
+      o.value = name;
+      o.textContent = name;
+      if (name === suggested) o.selected = true;
+      sel.appendChild(o);
+    }
+  }).catch((err) => { $('search-error').textContent = err.message || err; });
+
+  $('search-form').addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const btn = $('search-btn');
+    $('search-error').textContent = '';
+    btn.disabled = true;
+    btn.textContent = t('pair.searching');
+    Homey.emit('search', {
+      municipality: $('municipality').value,
+      zipcode: $('zipcode').value.trim(),
+      street: $('street').value.trim(),
+      houseNumber: $('house').value.trim(),
+    }).then((list) => {
+      const ul = $('results');
+      ul.replaceChildren();
+      list.forEach((name, i) => {
+        const li = document.createElement('li');
+        const label = document.createElement('label');
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'address';
+        radio.value = name;
+        radio.className = 'homey-form-radio-input';
+        radio.addEventListener('change', () => choose(name));
+        label.appendChild(radio);
+        label.appendChild(document.createTextNode(name));
+        li.appendChild(label);
+        ul.appendChild(li);
+        if (list.length === 1 && i === 0) { radio.checked = true; choose(name); }
+      });
+      $('step-search').classList.add('affald-hidden');
+      $('step-select').classList.remove('affald-hidden');
+    }).catch((err) => {
+      $('search-error').textContent = err.message || err;
+    }).finally(() => {
+      btn.disabled = false;
+      btn.textContent = t('pair.search');
+    });
+  });
+
+  function choose(name) {
+    candidate = null;
+    $('add-btn').disabled = true;
+    $('select-error').textContent = '';
+    $('preview-wrap').classList.add('affald-hidden');
+    $('add-btn').textContent = t('pair.adding');
+    Homey.emit('select', name).then((device) => {
+      candidate = device;
+      const ul = $('preview');
+      ul.replaceChildren();
+      for (const p of device.preview) {
+        const li = document.createElement('li');
+        const a = document.createElement('span');
+        a.textContent = p.name;
+        const b = document.createElement('span');
+        b.textContent = p.date.split('-').reverse().join('/');
+        li.appendChild(a);
+        li.appendChild(b);
+        ul.appendChild(li);
+      }
+      $('preview-wrap').classList.remove('affald-hidden');
+      $('add-btn').disabled = false;
+    }).catch((err) => {
+      $('select-error').textContent = err.message || err;
+    }).finally(() => {
+      $('add-btn').textContent = t('pair.add');
+    });
+  }
+
+  $('add-btn').addEventListener('click', () => {
+    if (!candidate) return;
+    const { preview, ...device } = candidate;
+    $('add-btn').disabled = true;
+    Homey.createDevice(device)
+      .then(() => Homey.done())
+      .catch((err) => { $('select-error').textContent = err.message || err; $('add-btn').disabled = false; });
+  });
+
+  $('back-btn').addEventListener('click', () => {
+    $('step-select').classList.add('affald-hidden');
+    $('step-search').classList.remove('affald-hidden');
+  });
+})();
+</script>

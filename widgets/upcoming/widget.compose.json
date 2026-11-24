@@ -1,0 +1,29 @@
+{
+  "name": { "en": "Waste pickups", "da": "Affaldstømning" },
+  "height": 160,
+  "transparent": false,
+  "settings": [
+    {
+      "id": "device",
+      "type": "autocomplete",
+      "title": { "en": "Address", "da": "Adresse" }
+    },
+    {
+      "id": "rows",
+      "type": "number",
+      "title": { "en": "Number of pickup days", "da": "Antal tømmedage" },
+      "value": 3,
+      "min": 1,
+      "max": 10
+    },
+    {
+      "id": "icons",
+      "type": "checkbox",
+      "title": { "en": "Show icons", "da": "Vis ikoner" },
+      "value": true
+    }
+  ],
+  "api": {
+    "getPickups": { "method": "GET", "path": "/pickups" }
+  }
+}

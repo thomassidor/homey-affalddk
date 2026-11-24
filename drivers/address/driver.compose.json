@@ -1,0 +1,57 @@
+{
+  "name": { "en": "Address", "da": "Adresse" },
+  "class": "sensor",
+  "capabilities": ["next_pickup_type", "next_pickup_date", "days_until.next_pickup"],
+  "capabilitiesOptions": {
+    "days_until.next_pickup": { "title": { "en": "Next pickup", "da": "Næste tømning" } }
+  },
+  "platforms": ["local"],
+  "connectivity": ["cloud"],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    { "id": "address" }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": { "en": "Address", "da": "Adresse" },
+      "children": [
+        { "id": "municipality_label", "type": "label", "label": { "en": "Municipality", "da": "Kommune" }, "value": "" },
+        { "id": "address_label", "type": "label", "label": { "en": "Address", "da": "Adresse" }, "value": "" }
+      ]
+    },
+    {
+      "type": "group",
+      "label": { "en": "Next pickup", "da": "Næste tømning" },
+      "children": [
+        {
+          "id": "switch_hour",
+          "type": "number",
+          "label": { "en": "Switch to the following pickup at (hour)", "da": "Skift til næste tømning kl." },
+          "hint": {
+            "en": "After this hour on a pickup day, \"Next pickup\" shows the following pickup instead of today's.",
+            "da": "Efter dette klokkeslæt på en tømningsdag viser \"Næste tømning\" den følgende tømning i stedet for dagens."
+          },
+          "value": 15,
+          "min": 0,
+          "max": 23,
+          "step": 1
+        },
+        {
+          "id": "dynamic_icon",
+          "type": "checkbox",
+          "label": { "en": "Show waste type icon for next pickup", "da": "Vis affaldstypens ikon for næste tømning" },
+          "hint": {
+            "en": "Used by the dashboard widget. Otherwise a generic recycling icon is shown.",
+            "da": "Bruges af dashboard-widgetten. Ellers vises et generelt genbrugsikon."
+          },
+          "value": true
+        }
+      ]
+    }
+  ]
+}
