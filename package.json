@@ -22,6 +22,7 @@
   "devDependencies": {
     "@types/homey": "npm:homey-apps-sdk-v3-types@^1.8.4",
     "@types/node": "^22.20.5",
+    "homey": "^4.6.3",
     "sharp": "^0.35.5",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
