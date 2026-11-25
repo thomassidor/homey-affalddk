@@ -45,6 +45,14 @@ python -I scripts/sync_upstream.py ../affalddk        # regenerates lib/affalddk
 npm test
 ```
 
+The sync records the upstream commit it came from in `lib/affalddk/data/upstream.json`. To see what upstream has done since, sorted into provider code (port by hand), data (re-run the sync) and Home Assistant parts (ignore):
+
+```bash
+git -C ../affalddk pull && python -I scripts/upstream_changes.py ../affalddk
+```
+
+The `Upstream watch` workflow runs the same check every Monday. If anything relevant has changed, it opens or updates a single issue labelled `upstream`, with a checklist of the new commits. Work through the list, run the sync, commit, and close the issue. The next report then starts from the new commit.
+
 `test/reference.test.ts` compares the port with upstream's own output on the same fixtures. To regenerate `test/fixtures/reference.json`, run `scripts/upstream_reference.py` in a venv that has `aiohttp beautifulsoup4 ical python-dateutil freezegun` installed.
 
 Provider changes, such as new endpoints, have to be ported by hand from `pyaffalddk/interface.py`.

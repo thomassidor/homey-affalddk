@@ -9,6 +9,7 @@ municipalities, then run `npm test`.
 import ast
 import json
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -68,6 +69,15 @@ def main(src: Path) -> None:
     for f in (comp / 'images').glob('*.svg'):
         shutil.copyfile(f, img_out / f.name)
     print('copied icons')
+
+    # Record which upstream commit this sync came from, so scripts/upstream_changes.py
+    # (and the weekly upstream-watch workflow) can list what changed since.
+    try:
+        rev = subprocess.run(['git', '-C', str(src), 'log', '-1', '--format=%H%n%cs'],
+                             capture_output=True, text=True, check=True).stdout.split()
+        dump(OUT_LIB / 'upstream.json', {'commit': rev[0], 'date': rev[1]})
+    except (OSError, subprocess.CalledProcessError, IndexError):
+        print('warning: not a git checkout, upstream.json not updated')
 
 
 if __name__ == '__main__':

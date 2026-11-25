@@ -1,0 +1,51 @@
+name: Upstream watch
+
+# Weekly: list briis/affalddk commits since the last sync (lib/affalddk/data/upstream.json),
+# triaged by scripts/upstream_changes.py, in one open "upstream" issue. Only reads upstream
+# with git; no upstream code is run. Nothing in this repository is changed.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch upstream
+        run: git clone --quiet --filter=blob:none https://github.com/briis/affalddk "$RUNNER_TEMP/affalddk"
+
+      - name: Triage upstream commits
+        id: triage
+        run: |
+          set +e
+          python3 -I scripts/upstream_changes.py "$RUNNER_TEMP/affalddk" --out "$RUNNER_TEMP/report.md"
+          code=$?
+          set -e
+          case $code in
+            0) echo "relevant=true" >> "$GITHUB_OUTPUT" ;;
+            3) echo "relevant=false" >> "$GITHUB_OUTPUT"; echo "Nothing relevant upstream." ;;
+            *) exit $code ;;
+          esac
+          cat "$RUNNER_TEMP/report.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open or update the upstream issue
+        if: steps.triage.outputs.relevant == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create upstream --color 0e8a16 --description "Changes in briis/affalddk to evaluate" 2>/dev/null || true
+          issue=$(gh issue list --label upstream --state open --json number --jq '.[0].number')
+          if [ -n "$issue" ]; then
+            gh issue edit "$issue" --body-file "$RUNNER_TEMP/report.md"
+            gh issue comment "$issue" --body "Updated with the latest upstream commits."
+          else
+            gh issue create --title "Upstream changes to evaluate" --label upstream --body-file "$RUNNER_TEMP/report.md"
+          fi
