@@ -73,9 +73,12 @@ def main(src: Path, out: Path | None) -> int:
     if groups['ignored']:
         md += ['<details><summary>Ignored (Home Assistant, CI, docs): '
                f'{len(groups["ignored"])} commits</summary>', '', *groups['ignored'], '', '</details>', '']
-    if not relevant:
-        md += ['Nothing that affects this app.', '']
-    md += ['When done, run the sync (it updates `lib/affalddk/data/upstream.json`) and close this issue.']
+    if base == head:
+        md = [f'No new upstream commits since the last sync ([{base[:7]}]({UPSTREAM}/commit/{base})).']
+    elif not relevant:
+        md += ['Nothing that affects this app.']
+    else:
+        md += ['When done, run the sync (it updates `lib/affalddk/data/upstream.json`) and close this issue.']
 
     text = '\n'.join(md) + '\n'
     if out:
