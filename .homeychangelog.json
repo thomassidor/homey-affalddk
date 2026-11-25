@@ -1,4 +1,8 @@
 {
+  "1.0.1": {
+    "en": "The compact Waste pickups widget now shows the time until each pickup (e.g. \"In 5 days\") instead of the date.",
+    "da": "Den kompakte Affaldstømning-widget viser nu tiden til hver tømning (fx \"Om 5 dage\") i stedet for datoen."
+  },
   "1.0.0": {
     "en": "First release: waste pickup days for 93 Danish municipalities. A device per address with days until each waste type, reminder and condition Flow cards, and two dashboard widgets (pickup list and pickup calendar). Based on Affaldshåndtering DK by Bjarne Riis and TermeHansen.",
     "da": "Første udgave: tømmedage for 93 danske kommuner. En enhed pr. adresse med dage til hver affaldstype, Flow-kort til påmindelser og betingelser, og to dashboard-widgets (tømningsliste og tømmekalender). Bygget på Affaldshåndtering DK af Bjarne Riis og TermeHansen."

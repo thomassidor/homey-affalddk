@@ -2,7 +2,7 @@ import Homey from 'homey';
 import { addDays, localParts, setMissingTypeLogger, weekday } from './lib/affalddk';
 import { widgetIconPath } from './lib/icons';
 import {
-  daysText, fractionName, longDate, monthName, shortDate, toLang, weekdayLetters,
+  daysText, fractionName, longDate, monthName, toLang, weekdayLetters,
 } from './lib/names';
 import type { AddressDevice } from './drivers/address/device';
 
@@ -10,7 +10,6 @@ export interface WidgetPickup {
   date: string;
   daysUntil: number;
   when: string;
-  dateLabel: string;
   dateLong: string;
   fractions: Array<{ key: string; name: string; icon: string }>;
 }
@@ -92,7 +91,6 @@ class AffaldApp extends Homey.App {
         date: d.date,
         daysUntil: d.daysUntil,
         when: daysText(d.daysUntil, lang),
-        dateLabel: shortDate(d.date, lang),
         dateLong: longDate(d.date, lang),
         fractions: d.keys.map((key) => ({ key, name: fractionName(key, lang), icon: widgetIconPath(key) })),
       })),

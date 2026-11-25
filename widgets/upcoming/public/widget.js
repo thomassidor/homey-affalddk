@@ -87,8 +87,7 @@
         var names = p.fractions.map(function (f) { return f.name; }).join(', ');
         el('div', 'ap-name', names, text).dir = 'auto';
         el('div', 'ap-date', p.dateLong, text);
-        // Compact has no date line: the date goes in the "when" column for days further out
-        el('div', 'ap-when', compact && p.daysUntil > 1 ? p.dateLabel : p.when, row);
+        el('div', 'ap-when', p.when, row);
       });
       root.replaceChildren(list);
     }
