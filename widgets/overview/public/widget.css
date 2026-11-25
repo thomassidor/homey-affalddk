@@ -1,0 +1,47 @@
+/*
+ * Waste overview widget: every waste type's icon and the days until it's next emptied.
+ * Same tokens as the Waste pickups widget (Homey's, with the dark theme's values as
+ * fallbacks for dev/overview-preview.html).
+ */
+.ao {
+  --ao-bg: var(--homey-background-color, #1F2029);
+  --ao-text: var(--homey-text-color, #E4E4E7);
+  --ao-muted: var(--homey-text-color-light, #999AA3);
+  --ao-neutral: color-mix(in srgb, var(--ao-text) 9%, var(--ao-bg));
+  --ao-today: #267700;
+  --ao-on-today: #ffffff;
+  --ao-fs-small: var(--homey-font-size-small, 14px); --ao-lh-small: var(--homey-line-height-small, 20px);
+  --ao-fs-label: 12px;
+  --ao-bold: var(--homey-font-weight-bold, 700);
+  --ao-medium: var(--homey-font-weight-medium, 500);
+  --ao-icon: 40px;
+  color: var(--ao-text);
+}
+html { font-family: Roboto, -apple-system, system-ui, sans-serif; }
+.ao * { box-sizing: border-box; }
+
+/* Tiles: icon over the day count. Today a green pill, tomorrow a grey one, later plain grey. */
+.ao-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); gap: 14px 8px; }
+.ao-tile { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
+.ao-icon { position: relative; width: var(--ao-icon); height: var(--ao-icon); }
+.ao-icon img { display: block; width: 100%; height: 100%; border-radius: 10px; }
+.ao-days {
+  height: 22px; min-width: 34px; padding: 0 8px; border-radius: 11px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: var(--ao-fs-small); line-height: var(--ao-lh-small); font-weight: var(--ao-medium);
+  color: var(--ao-muted); white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+.ao-tile.today .ao-days { background: var(--ao-today); color: var(--ao-on-today); font-weight: var(--ao-bold); }
+.ao-tile.tomorrow .ao-days { background: var(--ao-neutral); color: var(--ao-text); font-weight: var(--ao-bold); }
+
+/* Compact: the days as a badge on the icon's corner; types more than a week out dimmed. */
+.ao.compact .ao-grid { grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 14px 6px; justify-items: center; padding: 0 4px 4px 0; }
+.ao.compact .ao-days {
+  position: absolute; right: -7px; bottom: -7px; height: 22px; min-width: 22px; padding: 0 5px; border-radius: 11px;
+  font-size: var(--ao-fs-label); line-height: 1; font-weight: var(--ao-bold);
+  background: var(--ao-neutral); color: var(--ao-text); box-shadow: 0 0 0 2px var(--ao-bg);
+}
+.ao.compact .ao-tile.far img { opacity: .55; }
+
+.ao-message { font-size: var(--ao-fs-small); line-height: var(--ao-lh-small); color: var(--ao-muted); }
+.ao-message.error { color: var(--homey-color-red, #F25F5C); }

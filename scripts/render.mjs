@@ -39,11 +39,16 @@ const SHOTS = {
   calendar: [
     ['calendar-all', '/dev/calendar-preview.html', 1100, 900],
   ],
+  overview: [
+    ['overview-all', '/dev/overview-preview.html', 1300, 700],
+  ],
   // README screenshots (made-up data), cropped to the content
   docs: [
     ['../docs/screenshots/widget-list-dark', '/dev/preview.html?only=dark&docs=1', 600, 700],
     ['../docs/screenshots/widget-list-light', '/dev/preview.html?only=light&docs=1', 600, 700],
     ['../docs/screenshots/widget-list-compact', '/dev/preview.html?only=dark-compact&docs=1', 600, 700],
+    ['../docs/screenshots/widget-overview-dark', '/dev/overview-preview.html?only=dark&docs=1', 600, 500],
+    ['../docs/screenshots/widget-overview-compact', '/dev/overview-preview.html?only=dark-compact&docs=1', 600, 500],
     ['../docs/screenshots/widget-calendar-dark', '/dev/calendar-preview.html?only=0&docs=1', 600, 900],
     ['../docs/screenshots/widget-calendar-light', '/dev/calendar-preview.html?only=2&docs=1', 600, 900],
     ['../docs/screenshots/pair-search', '/dev/pair-preview.html?step=1&docs=1', 422, 1000],
@@ -62,6 +67,8 @@ const SHOTS = {
     ['../widgets/upcoming/preview-light', '/dev/widget-previews.html?theme=light', 1024, 1024, 1],
     ['../widgets/calendar/preview-dark', '/dev/widget-previews.html?theme=dark&w=calendar', 1024, 1024, 1],
     ['../widgets/calendar/preview-light', '/dev/widget-previews.html?theme=light&w=calendar', 1024, 1024, 1],
+    ['../widgets/overview/preview-dark', '/dev/widget-previews.html?theme=dark&w=overview', 1024, 1024, 1],
+    ['../widgets/overview/preview-light', '/dev/widget-previews.html?theme=light&w=overview', 1024, 1024, 1],
   ],
 };
 

@@ -38,6 +38,14 @@ Add your address once, and Homey knows when each bin is emptied.
   <img src="docs/screenshots/widget-calendar-light.png" alt="Pickup calendar widget, light" width="380">
 </p>
 
+**Waste overview** gives the full picture in a small space: every waste type's icon with the days until it's next emptied, soonest first. Pick which waste types it shows in its settings, or leave them empty to show all of them. The compact version puts the days on the icon as a badge.
+
+<p>
+  <img src="docs/screenshots/widget-overview-dark.png" alt="Waste overview widget, dark" width="380">
+  &nbsp;
+  <img src="docs/screenshots/widget-overview-compact.png" alt="Waste overview widget, compact" width="380">
+</p>
+
 ### Reminders and automations
 
 | Flow card | Type | What it does |
@@ -107,7 +115,7 @@ You can add several addresses, such as a summer house.
 
 ### 3. Put it to work
 
-Add the **Waste pickups** or **Pickup calendar** widget to a dashboard and pick your address in its settings. Then make a Flow with the **Pickup reminder** card.
+Add the **Waste pickups**, **Pickup calendar** or **Waste overview** widget to a dashboard and pick your address in its settings. Then make a Flow with the **Pickup reminder** card.
 
 ## Supported municipalities
 

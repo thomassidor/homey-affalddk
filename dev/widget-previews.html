@@ -9,6 +9,7 @@
   <meta charset="utf-8">
   <style>
     html, body { margin: 0; background: transparent; }
+    [hidden] { display: none !important; }
     body { width: 1024px; height: 1024px; display: grid; place-items: center; }
     .card { width: 800px; padding: 52px 48px; border-radius: 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 52px; }
     .dark .card { background: #1F2029; box-shadow: 0 24px 60px rgba(0,0,0,.28); --t: #CFD0D4; --m: #6E6F78; --n: #33343F; }
@@ -27,6 +28,14 @@
     .pill.today { background: #267700; } .pill.today i { background: #fff; }
     .pill.tomorrow { background: var(--n); } .pill.tomorrow i { background: var(--t); }
     .pill.later { background: none; } .pill.later i { background: var(--m); width: 110px; height: 24px; }
+    .ov-card { padding: 64px 56px; }
+    .ov { display: grid; grid-template-columns: repeat(4, 1fr); gap: 52px 24px; justify-items: center; }
+    .ov .t { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+    .ov img { width: 120px; height: 120px; border-radius: 30px; display: block; }
+    .ov .p { width: 104px; height: 60px; border-radius: 30px; display: grid; place-items: center; }
+    .ov .p i { display: block; width: 52px; height: 22px; border-radius: 11px; background: var(--m); }
+    .ov .p.today { background: #267700; } .ov .p.today i { background: #fff; }
+    .ov .p.tomorrow { background: var(--n); } .ov .p.tomorrow i { background: var(--t); }
     .cal-card { gap: 36px; }
     .cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
     .cell { aspect-ratio: 1; border-radius: 22px; display: grid; place-items: center; }
@@ -48,6 +57,7 @@
     <div class="row"><div class="icon"><img src="../widgets/upcoming/public/icons/metalglas.svg"></div>
       <div class="bars"><div class="bar" style="width:42%"></div><div class="bar m" style="width:50%"></div></div><div class="pill later"><i></i></div></div>
   </div>
+  <div class="card ov-card" hidden><div class="ov"></div></div>
   <div class="card cal-card" hidden>
     <div class="bar" style="width:46%;height:34px;border-radius:17px"></div>
     <div class="cal"></div>
@@ -55,6 +65,16 @@
   <script>
     var params = new URLSearchParams(location.search);
     document.body.className = params.get('theme') || 'dark';
+    if (params.get('w') === 'overview') {
+      document.querySelector('.card:not(.cal-card):not(.ov-card)').remove();
+      var ovCard = document.querySelector('.ov-card');
+      ovCard.hidden = false;
+      [['restaffaldmadaffald', 'today'], ['farligtaffald', 'tomorrow'], ['glas', ''], ['papir', ''], ['pap', ''], ['metalglas', ''], ['tekstil', ''], ['haveaffald', '']].forEach(function (x) {
+        var tile = document.createElement('div'); tile.className = 't';
+        tile.innerHTML = '<img src="../widgets/upcoming/public/icons/' + x[0] + '.svg"><div class="p ' + x[1] + '"><i></i></div>';
+        ovCard.querySelector('.ov').appendChild(tile);
+      });
+    }
     if (params.get('w') === 'calendar') {
       document.querySelector('.card:not(.cal-card)').remove();
       var card = document.querySelector('.cal-card');

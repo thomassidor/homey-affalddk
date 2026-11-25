@@ -39,6 +39,7 @@
     "any_fraction": "Enhver affaldstype"
   },
   "widget": {
+    "no_type": "Ingen (tom plads)",
     "no_device": "Vælg en adresse i widgettens indstillinger",
     "no_pickups": "Ingen kommende tømninger",
     "unavailable": "Tømningsdata er ikke tilgængelige"

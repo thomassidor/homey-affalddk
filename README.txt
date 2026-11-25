@@ -5,7 +5,7 @@ Add your address as a device and you get:
 - The next pickup with its date and waste types
 - A flow trigger that reminds you at a chosen time, e.g. at 19:00 the evening before the paper bin is emptied
 - Flow conditions such as "Paper is collected tomorrow" or "Any waste type is collected within 2 days"
-- Two dashboard widgets: the upcoming pickups as a list, and a pickup calendar with the waste type icons on the pickup days
+- Three dashboard widgets: the upcoming pickups as a list, a pickup calendar with the waste type icons on the pickup days, and an overview of every waste type with the days until it is emptied
 
 93 municipalities are supported through AffaldOnline, Perfect Waste, RenoWeb, Open Experience, Provas, RenoDjurs, RenoSyd, Vest Forbrænding, WasteWatch, Kredsløb (Aarhus), Odense Renovation, København, Herning, Ikast-Brande and Kolding.
 

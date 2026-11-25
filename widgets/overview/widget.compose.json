@@ -1,0 +1,101 @@
+{
+  "name": {
+    "en": "Waste overview",
+    "da": "Affaldsoverblik"
+  },
+  "height": 120,
+  "transparent": false,
+  "settings": [
+    {
+      "id": "device",
+      "type": "autocomplete",
+      "title": {
+        "en": "Address",
+        "da": "Adresse"
+      }
+    },
+    {
+      "id": "compact",
+      "type": "checkbox",
+      "title": {
+        "en": "Compact (days as a badge on the icon)",
+        "da": "Kompakt (dage som mærke på ikonet)"
+      },
+      "value": false
+    },
+    {
+      "id": "type1",
+      "type": "autocomplete",
+      "title": {
+        "en": "Waste type 1",
+        "da": "Affaldstype 1"
+      },
+      "hint": {
+        "en": "Pick the waste types to show. Leave them all empty to show every type at the address.",
+        "da": "Vælg de affaldstyper der skal vises. Lad dem alle være tomme for at vise alle typer på adressen."
+      }
+    },
+    {
+      "id": "type2",
+      "type": "autocomplete",
+      "title": {
+        "en": "Waste type 2",
+        "da": "Affaldstype 2"
+      }
+    },
+    {
+      "id": "type3",
+      "type": "autocomplete",
+      "title": {
+        "en": "Waste type 3",
+        "da": "Affaldstype 3"
+      }
+    },
+    {
+      "id": "type4",
+      "type": "autocomplete",
+      "title": {
+        "en": "Waste type 4",
+        "da": "Affaldstype 4"
+      }
+    },
+    {
+      "id": "type5",
+      "type": "autocomplete",
+      "title": {
+        "en": "Waste type 5",
+        "da": "Affaldstype 5"
+      }
+    },
+    {
+      "id": "type6",
+      "type": "autocomplete",
+      "title": {
+        "en": "Waste type 6",
+        "da": "Affaldstype 6"
+      }
+    },
+    {
+      "id": "type7",
+      "type": "autocomplete",
+      "title": {
+        "en": "Waste type 7",
+        "da": "Affaldstype 7"
+      }
+    },
+    {
+      "id": "type8",
+      "type": "autocomplete",
+      "title": {
+        "en": "Waste type 8",
+        "da": "Affaldstype 8"
+      }
+    }
+  ],
+  "api": {
+    "getOverview": {
+      "method": "GET",
+      "path": "/overview"
+    }
+  }
+}

@@ -77,7 +77,7 @@ Everything visual is rendered from HTML with headless Edge or Chrome (`scripts/r
 
 | Command | Output |
 |---|---|
-| `node scripts/render.mjs pair widget calendar` | Dev renders in `.renders/` (gitignored) |
+| `node scripts/render.mjs pair widget calendar overview` | Dev renders in `.renders/` (gitignored) |
 | `node scripts/render.mjs previews` | The widgets' store previews (`widgets/*/preview-*.png`) |
 | `node scripts/render.mjs docs` | The README screenshots (`docs/screenshots/`) |
 | `npm run store-images` | The App Store images (`assets/images/`) and driver images |

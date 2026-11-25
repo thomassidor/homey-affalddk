@@ -39,6 +39,7 @@
     "any_fraction": "Any waste type"
   },
   "widget": {
+    "no_type": "None (empty slot)",
     "no_device": "Choose an address in the widget settings",
     "no_pickups": "No upcoming pickups",
     "unavailable": "Pickup data unavailable"

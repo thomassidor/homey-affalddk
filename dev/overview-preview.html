@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+  Dev preview of the Waste overview widget with a simulated Homey and made-up data.
+  Render: node scripts/render.mjs overview. ?only=<card id> shows one card.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../widgets/overview/public/widget.css">
+  <script src="../widgets/overview/public/widget.js"></script>
+  <style>
+    html, body { margin: 0; }
+    body { font-family: Roboto, -apple-system, system-ui, sans-serif; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; background: #888; }
+    .board { padding: 20px; border-radius: 20px; display: flex; gap: 20px; align-items: flex-start; }
+    .board.dark { background: #14151B; }
+    .board.light { background: #F4F4FA; }
+    .card { border-radius: 14px; padding: 16px; box-sizing: border-box; }
+    .dark .card { background: #1F2029; --homey-background-color: #1F2029; --homey-text-color: #E4E4E7; --homey-text-color-light: #999AA3; }
+    .light .card { background: #FFFFFF; --homey-background-color: #FFFFFF; --homey-text-color: #1A1B21; --homey-text-color-light: #6B6D76; }
+    .card { --homey-font-size-small: 14px; --homey-line-height-small: 20px; }
+    .w358 { width: 358px; } .w170 { width: 170px; }
+    body.docs { background: transparent; padding: 0; }
+  </style>
+</head>
+<body>
+  <script>
+    var ICON = '../widgets/upcoming/public/icons/';
+    function t(key, name, d) {
+      return { key: key, name: name, icon: ICON + key + '.svg', daysUntil: d, when: d == null ? '–' : d === 0 ? 'I dag' : d + ' d', label: name };
+    }
+    var ALL = [
+      t('restaffaldmadaffald', 'Rest- & madaffald', 0), t('farligtaffald', 'Farligt affald', 1), t('tekstil', 'Tekstilaffald', 1),
+      t('glas', 'Glas', 5), t('papir', 'Papir', 5), t('pap', 'Pap', 9), t('metalglas', 'Metal & glas', 12), t('haveaffald', 'Haveaffald', 23),
+    ];
+    var CARDS = [
+      { id: 'dark', theme: 'dark', cls: 'w358', settings: {} },
+      { id: 'dark-half', theme: 'dark', cls: 'w170', settings: {} },
+      { id: 'dark-compact', theme: 'dark', cls: 'w358', settings: { compact: true } },
+      { id: 'dark-compact-half', theme: 'dark', cls: 'w170', settings: { compact: true } },
+      { id: 'light', theme: 'light', cls: 'w358', settings: {} },
+      { id: 'light-chosen', theme: 'light', cls: 'w170', settings: { type1: { id: 'restaffaldmadaffald' }, type2: { id: 'pap' }, type3: { id: 'glas' } } },
+      { id: 'light-compact', theme: 'light', cls: 'w358', settings: { compact: true } },
+      { id: 'dark-empty', theme: 'dark', cls: 'w358', data: { status: 'no_device', message: 'Vælg en adresse i widgettens indstillinger', types: [] } },
+    ];
+    var params = new URLSearchParams(location.search);
+    var only = params.get('only');
+    if (params.get('docs')) document.body.classList.add('docs');
+    var boards = {};
+    CARDS.filter(function (c) { return !only || c.id === only; }).forEach(function (c) {
+      var board = boards[c.theme];
+      if (!board) { board = boards[c.theme] = document.createElement('div'); board.className = 'board ' + c.theme; document.body.appendChild(board); }
+      var card = document.createElement('div');
+      card.className = 'card homey-widget ' + c.cls;
+      card.id = c.id;
+      var root = document.createElement('div');
+      card.appendChild(root);
+      board.appendChild(card);
+      var fakeHomey = {
+        getSettings: function () { return c.settings || {}; },
+        api: function (method, path) {
+          if (c.data) return Promise.resolve(c.data);
+          var chosen = decodeURIComponent(path.match(/types=([^&]*)/)[1]).split(',').filter(Boolean);
+          var types = chosen.length ? ALL.filter(function (x) { return chosen.indexOf(x.key) >= 0; }) : ALL;
+          return Promise.resolve({ status: 'ok', name: 'Bygaden 3', types: types });
+        },
+        ready: function () {}, setHeight: function () {}, on: function () {},
+      };
+      AffaldOverview.mount(fakeHomey, { root: root, frame: card });
+    });
+  </script>
+</body>
+</html>

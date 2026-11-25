@@ -1,5 +1,5 @@
 import Homey from 'homey';
-import { addDays, localParts, setMissingTypeLogger, weekday } from './lib/affalddk';
+import { addDays, diffDays, localParts, setMissingTypeLogger, weekday } from './lib/affalddk';
 import { widgetIconPath } from './lib/icons';
 import {
   daysText, fractionName, longDate, monthName, toLang, weekdayLetters,
@@ -19,6 +19,25 @@ export interface WidgetData {
   message?: string;
   name?: string;
   pickups: WidgetPickup[];
+}
+
+export interface OverviewType {
+  key: string;
+  name: string;
+  icon: string;
+  /** null when the type has no upcoming pickup in the data */
+  daysUntil: number | null;
+  /** "I dag", "1 d", "5 d", or "–" */
+  when: string;
+  /** "Glas: søndag d. 29. november" */
+  label: string;
+}
+
+export interface OverviewData {
+  status: 'ok' | 'no_device' | 'no_pickups' | 'unavailable';
+  message?: string;
+  name?: string;
+  types: OverviewType[];
 }
 
 export interface CalendarDay {
@@ -46,7 +65,7 @@ class AffaldApp extends Homey.App {
   async onInit(): Promise<void> {
     setMissingTypeLogger((msg) => this.log(`[unknown waste type] ${msg}`));
 
-    for (const id of ['upcoming', 'calendar']) {
+    for (const id of ['upcoming', 'calendar', 'overview']) {
       this.homey.dashboards.getWidget(id).registerSettingAutocompleteListener('device', async (query: string) => {
         const q = query.trim().toLowerCase();
         return this.addressDevices()
@@ -54,6 +73,20 @@ class AffaldApp extends Homey.App {
           .filter((d) => !q || d.name.toLowerCase().includes(q));
       });
     }
+
+    // The overview's waste type slots: the chosen address's types, and "none" to empty a slot
+    const overview = this.homey.dashboards.getWidget('overview');
+    const typeAutocomplete = async (query: string, settings: Record<string, any>) => {
+      const lang = toLang(this.homey.i18n.getLanguage());
+      const device = this.widgetDevice(settings?.device?.id);
+      const keys = device ? this.overviewKeys(device) : [];
+      const q = query.trim().toLowerCase();
+      const items = keys.map((k) => ({ id: k, name: fractionName(k, lang) }))
+        .sort((a, b) => a.name.localeCompare(b.name, lang))
+        .filter((i) => !q || i.name.toLowerCase().includes(q));
+      return [{ id: '', name: this.homey.__('widget.no_type') }, ...items];
+    };
+    for (let i = 1; i <= 8; i++) overview.registerSettingAutocompleteListener(`type${i}`, typeAutocomplete);
 
     this.log('Affald DK started');
   }
@@ -95,6 +128,49 @@ class AffaldApp extends Homey.App {
         fractions: d.keys.map((key) => ({ key, name: fractionName(key, lang), icon: widgetIconPath(key) })),
       })),
     };
+  }
+
+  /** Waste types at the address: those it has had pickups for, and any in the current data. */
+  private overviewKeys(device: AddressDevice): string[] {
+    return [...new Set([...device.knownKeys, ...device.getEvents().map((e) => e.key)])];
+  }
+
+  /**
+   * Data for the Waste overview widget: each waste type (the chosen ones, or all at the
+   * address) with the days until its next pickup, soonest first.
+   */
+  getOverviewData(deviceId: string | undefined, chosen: string[], iconBase = ''): OverviewData {
+    const lang = toLang(this.homey.i18n.getLanguage());
+    const device = this.widgetDevice(deviceId);
+    if (!device) return { status: 'no_device', message: this.homey.__('widget.no_device'), types: [] };
+
+    const today = localParts(new Date(), device.tz).date;
+    const next = new Map<string, string>();
+    for (const e of device.getEvents()) {
+      if (e.date >= today && (!next.has(e.key) || e.date < next.get(e.key)!)) next.set(e.key, e.date);
+    }
+    const keys = chosen.length ? [...new Set(chosen)] : this.overviewKeys(device);
+    if (!keys.length) {
+      const unavailable = !device.getAvailable();
+      return {
+        status: unavailable ? 'unavailable' : 'no_pickups',
+        message: this.homey.__(unavailable ? 'widget.unavailable' : 'widget.no_pickups'),
+        name: device.getName(),
+        types: [],
+      };
+    }
+    const types = keys.map((key): OverviewType => {
+      const name = fractionName(key, lang);
+      const date = next.get(key);
+      const daysUntil = date ? diffDays(today, date) : null;
+      return {
+        key, name, icon: iconBase + widgetIconPath(key), daysUntil,
+        when: daysUntil == null ? '–' : daysUntil === 0 ? daysText(0, lang) : `${daysUntil} d`,
+        label: date ? `${name}: ${longDate(date, lang)}` : name,
+      };
+    });
+    types.sort((a, b) => (a.daysUntil ?? Infinity) - (b.daysUntil ?? Infinity) || a.name.localeCompare(b.name, lang));
+    return { status: 'ok', name: device.getName(), types };
   }
 
   /**
